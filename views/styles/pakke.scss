@@ -1,0 +1,421 @@
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
+
+
+$open:			'Open Sans', sans-serif;
+
+$white: 				#ffffff;	//blanco
+$purple:				#5E0D8B;	//morado top
+$menu-top:				#E3B2FF;	// morado menu top
+$etomin:				#FF5959;	// etomin
+
+$f11:					0.688rem;
+$f12:					0.750rem;
+$f13:					0.813rem;
+$f14:					0.875rem;
+$f15:					0.938rem;
+$f16:					1rem;
+$f17:					1.063rem;
+$f18:					1.125rem;
+$f19:					1.188rem;
+$f20:					1.250rem;
+$f22:					1.375rem;
+$f25:					1.563rem;
+$f30:					1.875rem;
+
+
+
+$path--rel:				"../img";
+
+
+// MIXINS ::::::::: ::::::::::::: ::::::::::: 
+
+@mixin border-radius($border) {
+	-webkit-border-radius: $border;
+	-moz-border-radius: $border;
+	-ms-border-radius: $border;
+	border-radius: $border;
+}
+
+@mixin box-shadow-out($x, $y, $blur, $color) {
+	-webkit-box-shadow: $x $y $blur $color;
+	-moz-box-shadow: $x $y $blur $color;
+	box-shadow: $x $y $blur $color;
+}
+
+@mixin opacity($numero) {
+	$ms:  $numero * 100;
+	filter: alpha(opacity=$ms);
+	opacity: $numero;
+}
+
+@mixin bg ($color, $url, $position, $bgsize) {
+	background-color: $color;
+	background-image: url('#{$path--rel}/#{$url}');
+	background-repeat: no-repeat;
+	background-position: $position;
+	background-size: $bgsize;
+}
+
+@mixin background-image($img, $background-position, $background-color) {
+    background-image: url('#{$path--rel}/#{$img}');
+    background-repeat: no-repeat;
+    background-position: $background-position;
+    background-color: $background-color;
+}
+
+@mixin transition($tiempo) {
+	-webkit-transition: all $tiempo ease-in-out;
+	-moz-transition: all $tiempo ease-in-out;
+	-ms-transition: all $tiempo ease-in-out;
+	transition: all $tiempo ease-in-out;
+}
+
+
+
+
+// RESET ::::::::: ::::::::::::: ::::::::::: 
+* {
+	margin: 0;
+	padding: 0;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body, html {
+	font-family: $open;
+	font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+a, a:hover, a:focus {
+	cursor: pointer;
+	text-decoration: none;
+
+	-webkit-transition: all 0.35s ease-in-out;
+	-moz-transition: all 0.35s ease-in-out;
+	-o-transition: all 0.35s ease-in-out;
+	transition: all 0.35s ease-in-out;
+}
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td{ margin:0; padding:0; }	
+table{ border-collapse:collapse; border-spacing:0; }
+fieldset,img{ border:0; }body,address,caption,cite,code,dfn,em,strong,th,var{ font-style:normal; font-weight:normal; }
+li {
+	list-style:none;
+}
+caption,
+th {
+	text-align:left;
+}
+q:before,
+q:after {
+	content:'';
+}
+abbr, acronym {
+	border:0;
+	font-variant:normal;
+}
+sup {
+	vertical-align:text-top;
+}
+sub {
+	vertical-align:text-bottom;
+}
+input, textarea, select {
+	font-family:inherit;
+	font-size:inherit;
+	font-weight:inherit;
+	outline-style:none;
+	outline-width:0pt;
+}
+legend { 
+	color:#000;
+}
+a:focus, object, h1, h2, h3, h4, h5, h6{ 
+	-moz-outline-style: none;
+	border:0px;
+}
+strong {
+	font-size: 130%;
+}
+.hidden{
+	display: none;
+}
+svg:not(:root) {
+	overflow:hidden;
+}
+::selection {
+	background: #5186c5;
+	color: #fff;
+}
+::-moz-selection {
+	background: #5186c5 !important;
+	color: #fff;
+}
+
+
+
+
+
+
+
+
+
+// GENERALES ::::::::: ::::::::::::: ::::::::::: 
+
+
+body {
+	background-color: pink;
+}
+
+
+.wp {
+	width: 95%;
+	max-width: 1200px;
+	position: relative;
+	margin: 0 auto 0;
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// HEADER ::::::::: ::::::::::::: ::::::::::: 
+
+header {
+	position: absolute;
+	z-index: 99;
+	width: 100%;
+	background-color: orange;
+	.menu {
+		position: relative;
+		padding-top: 4em;
+		display: block;
+		overflow: hidden;
+		h1, nav, .btn-registro {
+			float: left;
+			width: 15%;
+		}
+		h1 {
+			img {
+				width: 100%;
+				max-width: 151px;
+				display: block;
+			}
+			span {
+				display: none;
+			}
+		}
+		nav {
+			width: 70%;
+			text-align: right;
+			ul {
+				margin-top: 1.1em;
+				li {
+					display: inline-block;
+					margin: 0 0 0 0.25em;
+					border-right: thin solid rgba(255, 255, 255, 0.4);
+					&:last-child {
+						border: none;
+						a {
+							margin-right: 0;
+						}
+					}
+					a {
+						color: $white;
+						font-size: $f14;
+						display: block;
+						padding: 0 .25em;
+						margin-right: 0.6em;
+						&:hover {
+							@include opacity (.3);
+						}
+						&.activo {
+							font-weight: 700;
+						}
+					}
+				}
+			}
+		}
+		.btn-registro {
+			text-align: right;
+			width: 12%;
+			margin-top: .8em;
+			a {
+				background-color: $etomin;
+				width: 115px;
+				height: 36px;
+				text-align: center;
+				color: $white;
+				display: inline-block;
+				@include border-radius(18px);
+				font-size: $f14;
+				padding-top: .6em;
+				letter-spacing: 1px;
+				&:hover {
+					@include opacity(0.3);
+				}
+			}
+		}
+	}
+	.menu-top {
+		position: absolute;
+		width: 100%;
+		height: 30px;
+		background: $purple;
+		top: 0;
+		left: 0;
+		.wp {
+			overflow: hidden;
+			padding-top: .35em;
+			.tel, .redes, .menuu {
+				float: left;
+				color: $white;
+				font-size: $f13;
+			}
+			.tel {
+				a {
+					color: $menu-top;
+					padding-left: 1.5em;
+					display: block;
+					@include bg(transparent, 'telefono-pakke.svg', left center, 13px);
+				}
+			}
+			.redes {
+				padding: 0 0 0 2em;
+				span {
+					color: $menu-top;
+					float: left;
+				}
+				ul {
+					float: left;
+					padding-top: .1em;
+					li {
+						float: left;
+						margin-left: .75em;
+						a {
+							color: $menu-top;
+							display: block;
+							text-indent: -9999999px;
+							width: 15px;
+							height: 15px;
+						}
+						&:nth-child(1) {
+							a {
+								@include bg(transparent, 'facebook-pakke.svg', center center, contain);
+							}
+						}
+						&:nth-child(2) {
+							a {
+								@include bg(transparent, 'twitter-pakke.svg', center center, contain);
+							}
+						}
+					}
+				}
+			}
+			.menuu {
+				float: right;
+				ul {
+					li {
+						float: left;
+						border-left: solid thin rgba(255,255,255,0.3);
+						margin: 0 0 0 0;
+						a {
+							color: $menu-top;
+							display: block;
+							padding: 0 0 0 0;
+							margin: 0 .8em 0 .9em;
+						}
+						&:first-child {
+							border: none;
+						}
+						&:last-child {
+							a {
+								margin-right: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

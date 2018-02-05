@@ -1,0 +1,80 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+
+dist/*
+dist/
+./dist
+./dist/
+./node_modules
+./node_modules/
+./node_modules/*
+node_modules/
+node_modules/*
+node_modules/.DS_Store
+
+# -- Varios Archivos ------------------------------
+npm-debug.log
+gulpfile.js
+
+ 
+*/dist/*
+.idea
+.tmp
+.sass-cache
+
+# Dependency directory
+# https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+ 
+
+# -- Sistemas Operativos ------------------------------
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.*
+!.gitignore
+!.htaccess
+
+
+# Mac OS X
+.DS_Store
+./.DS_Store
+/.DS_Store
+*/.DS_Store
+app/.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# -- POR SI USAMOS PREPROS  ------------------------------
+prepros.cfg
+prepros-6.cfg
+prepros-6.config
+./prepros.cfg
+/prepros.cfg
+*/prepros.cfg
+.cfg
+./*.cfg
+/.cfg
+*/.cfg
+
+
+
+
+node_modules
+dist
+.tmp
+bower_components
+test/bower_components
