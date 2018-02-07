@@ -13,7 +13,7 @@
 
 	<!-- ESTILOS -->
 	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet" async> -->
-	<link rel="stylesheet" href="css/pakke.min.css" async>
+	<link rel="stylesheet" href="css/header.min.css" async>
 
 
 </head>
@@ -27,6 +27,7 @@
 	<header>
 		<div class="menu">
 			<div class="wp">
+				<div class="menu-btn">Menú</div>
 				<h1>
 					<img src="img/logo-pakke-bco.svg" alt="Pakke">
 					<span>Pakke</span>
@@ -101,6 +102,7 @@
 			<h2>Con pakke es muy fácil</h2>
 			<a href="">Descubre cómo funciona</a>
 		</div>
+		<div class="mask"></div>
 	</div>
 
 
@@ -367,6 +369,24 @@
 	<footer>
 		
 	</footer>
+
+
+
+
+
+
+
+
+
+
+	<script>
+		var resource = document.createElement('link'); 
+		resource.setAttribute("rel", "stylesheet");
+		resource.setAttribute("href","css/pakke.min.css");
+		resource.setAttribute("type","text/css");      
+		var head = document.getElementsByTagName('head')[0];
+		head.appendChild(resource);
+	</script>
 
 
 
