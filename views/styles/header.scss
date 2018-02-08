@@ -10,6 +10,9 @@ $purple:				#5E0D8B;		//morado top
 $rosa:					#a03c87;
 $menu-top:				#E3B2FF;		// morado menu top
 $etomin:				#FF5959;		// etomin
+$texto:					#888888;		// texto
+$textogris:				#969696;		// texto gris
+$bggris:				#f5f5f7;
 
 $f11:					0.688rem;
 $f12:					0.750rem;
@@ -197,6 +200,9 @@ header {
 		padding-top: 4em;
 		display: block;
 		overflow: hidden;
+		@media screen and (max-width:  1000px){
+			overflow: visible;
+		}
 		.menu-btn, h1, nav, .btn-registro {
 			float: left;
 			width: 15%;
@@ -206,11 +212,32 @@ header {
 		}
 		.menu-btn {
 			display: none;
-			@media screen and (max-width:  1000px){
+			vertical-align: middle;
+			text-indent: -9999px;
+			a {
 				display: block;
+				width: 30px;
+				height: 30px;
+				margin: 0;
+				@include bg($trans, 'pakke-burger-btn.svg', center center, 30px);
+				&:hover {
+					@include opacity(0.3);
+				}
+			}
+			@media screen and (max-width:  1000px){
+				display: inline-block;
+				padding-top: 1.6em;
 			}
 			@media screen and (max-width:  450px){
 				width: 20%;
+				padding-top: 1.2em;
+				padding-left: 2%;
+			}
+			@media screen and (max-width:  376px){
+				padding-top: .9em;
+			}
+			@media screen and (max-width:  320px){
+				padding-top: .6em;
 			}
 		}
 		h1 {
@@ -227,21 +254,12 @@ header {
 				display: none;
 			}
 		}
-		nav {
+		#menu {
 			width: 73%;
 			text-align: right;
-			@media screen and (max-width:  1024px){
-				width: 70%;
-			}
-			@media screen and (max-width:  1000px){
-				display: none;
-				position: absolute;
-			}
-			@media screen and (max-width:  450px){
-				width: 46%;
-			}
 			ul {
 				margin-top: 1.1em;
+				padding: 0;
 				li {
 					display: inline-block;
 					margin: 0 0 0 0.25em;
@@ -266,6 +284,78 @@ header {
 						}
 					}
 				}
+			}
+			@media screen and (max-width:  1024px){
+				width: 70%;
+			}
+			@media screen and (max-width:  1000px){
+				display: none;
+				position: absolute;
+				width: 100%;
+				background-color: $white;
+				text-align: center;
+				padding: 1.5em 0;
+				@include box-shadow-out(0,2px,6px,rgba(0,0,0,0.3));
+				top: 5em;
+				left: 0;
+				ul {
+					margin: 0;
+					padding: 0;
+					width: 100%;
+					li {
+						border: none;
+						margin: 0 2.5%;
+						padding: 0;
+						a {
+							color: $texto;
+							&:hover {
+								background-color: $purple;
+								color: $white;
+							}
+						}
+					}
+				}		
+			}	
+			@media screen and (max-width:  800px){
+				top: 4.5em;
+				ul {
+					li {
+						margin: 0 .5%;
+					}
+				}
+			}
+			@media screen and (max-width:  600px){
+				padding: .25em 0;
+				ul {
+					display: block;
+					li {
+						display: block;
+						width: 100%;
+						margin: 0;
+						a {
+							padding: .8em 0;
+							width: 100%;
+							
+						}
+					}
+				}
+			}
+			@media screen and (max-width:  450px){
+				top: 4em;
+				ul {
+					li{
+						margin: .1em 0;
+						a {
+							padding: 0.9em 0;
+						}
+					}
+				}
+			}
+			@media screen and (max-width:  375px){
+				top: 4em;
+			}
+			@media screen and (max-width:  320px){
+				top: 3.5em;
 			}
 		}
 		.btn-registro {
@@ -345,7 +435,7 @@ header {
 						margin-left: .75em;
 						@media screen and (max-width:  450px){
 							margin-left: 0;
-							margin-right: 1em;
+							margin-right: 1.5em;
 						}
 						a {
 							color: $menu-top;
@@ -394,8 +484,6 @@ header {
 		}
 	}
 }
-
-
 
 
 
@@ -514,6 +602,81 @@ header {
 	}
 }
 
+
+
+// TOP ::::::::: ::::::::::::: ::::::::::: 
+
+#como-funciona {
+	display: block;
+	width: 100%;
+	background-color: $bggris;
+	padding: 2.75em 0;
+	.wp {
+		text-align: center;
+		figure {
+			position: relative;
+			display: inline-block;
+			vertical-align: top;
+			width: 20%;
+			margin: 0 -.13em;
+			padding: 0 .1em 0;
+			&:after {
+				content: '';
+				position: absolute;
+				width: 130px;
+				height: 2px;
+				top: 0;
+				right: 0;
+				@include bg($trans, 'line.svg', left center, cover);
+				margin: 3.8em 0 0 0;
+			}
+			&:nth-child(1){
+				&:after {
+					width: 90px;
+					right: -60px;
+				}
+			}
+			&:nth-child(2){
+				&:after {
+					width: 100px;
+					right: -70px;
+				}
+			}
+			&:nth-child(3){
+				&:after {
+					width: 110px;
+					right: -65px;
+				}
+			}
+			&:nth-child(4){
+				&:after {
+					width: 90px;
+					right: -62px;
+				}
+			}
+			&:nth-child(5){
+				&:after {
+					display: none;
+				}
+			}
+			img {
+				display: block;
+				width: 100%;
+				max-width: 110px;
+				margin: 0 auto .9em;
+				height: 102px;
+			}
+			figcaption {
+				display: block;
+				width: 100%;
+				max-width: 205px;
+				color: $textogris;
+				font-size: $f16;
+				line-height: 1.2em;
+			}
+		}
+	}
+}
 
 
 
