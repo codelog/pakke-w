@@ -8,6 +8,7 @@ $trans:					transparent;
 $white: 				#ffffff;		//blanco
 $purple:				#5E0D8B;		//morado top
 $rosa:					#a03c87;
+$error:					#D7244C;
 $moradito:				#7F84BF;
 $menu-top:				#E3B2FF;		// morado menu top
 $etomin:				#FF5959;		// etomin
@@ -528,7 +529,6 @@ $path--rel:				"../img";
 	}
 	.mapa {
 		display: inline-block;
-		background-color: orange;
 		width: 40%;
 		max-width: 280px;
 		vertical-align: middle;
@@ -537,7 +537,7 @@ $path--rel:				"../img";
 			border: 0;
 			outline: 0;
 			display: block;
-			width: 280px;
+			width: 100%;
 			height: 200px;
 		}
 	}
@@ -585,6 +585,10 @@ $path--rel:				"../img";
 				padding: 0 0 .5em 0;
 				color: $moradito;
 				font-weight: 600;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				@include border-radius(0);
 				&:focus {
 					border-color: $moradito;
 				}
@@ -604,8 +608,106 @@ $path--rel:				"../img";
 					border: none;
 					cursor: pointer;
 					@include border-radius(18px);
+					@include transition(0.3s);
 					&:hover {
 						@include opacity(0.3);
+					}
+					&.error {
+						border-color: $error;
+						color: $error;
+					}
+				}
+			}
+		}
+		::-webkit-input-placeholder { 
+			color: rgba(0,0,0,0.4);
+			font-weight: 400;
+		}
+		:-moz-placeholder {
+			color: rgba(0,0,0,0.4);
+			font-weight: 400;
+		}
+		::-moz-placeholder {
+			color: rgba(0,0,0,0.4);
+			font-weight: 400;
+		}
+		:-ms-input-placeholder {
+			color: rgba(0,0,0,0.4);
+			font-weight: 400;
+		}
+	}
+	@media screen and (max-width:  1024px){
+		background-position: 60% top;
+		.wp {
+			padding: 0 0 0 17em;
+			.txt {
+				width: 50%;
+				vertical-align: -1.5em;
+			}
+		}
+	}
+	@media screen and (max-width:  1000px){
+		background-position: 85% top;
+		.wp {
+			padding: 0 0 0 10em;
+		}
+	}
+	@media screen and (max-width:  800px){
+		min-height: 300px;
+		.wp {
+			padding: 0;
+			h2 {
+				text-align: center;
+			}
+			.mapa {
+				width: 40%;
+				max-width: 40%;
+				margin-right: 5%;
+			}
+			.txt {
+				width: 52%;
+				address {
+					width: 90%;
+					margin: 0 auto 1em;
+				}
+			}
+			form {
+				p {
+					width: 100%;
+					margin: 0 0 2em 0;
+					padding: 0;
+				}
+			}
+		}
+	}
+	@media screen and (max-width:  600px){
+		.wp {
+			.mapa {
+				width: 100%;
+				height: 250px;
+				max-width: 100%;
+				display: block;
+				margin: 0 0 2em 0;
+				iframe {
+					height: 100%;
+				}
+			}
+			.txt {
+				display: block;
+				width: 100%;
+				text-align: center;
+				margin: 0 auto 2em;
+			}
+			form {
+				p {
+					&:last-child {
+						text-align: center;
+						input {
+							width: 90%;
+							max-width: 300px;
+							margin: 0 auto 0;
+							display: inline-block;
+						}
 					}
 				}
 			}
@@ -620,19 +722,32 @@ $path--rel:				"../img";
 
 
 
+// FOOTER ::::::::: ::::::::::::: ::::::::::: 
 
+footer {
+	position: relative;
+	width: 100%;
+	padding: 1em 0 1em;
+	@include bg2($rosa, 'pakke-footer-bg.jpg', repeat, top left, contain);
+	.wp {
+		background-color: orange;
+		overflow: hidden;
+		padding: 0 0 1em;
+		.col {
+			background-color: pink;
+			float: left;
+			width: 50%;
+			margin: 0;
+			padding: 0;
+			color: $white;
 
-
-
-
-
-
-
-
-
-
-
-
+			&:last-child {
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
+}
 
 
 
