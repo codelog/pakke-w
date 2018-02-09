@@ -1,13 +1,21 @@
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
 
 
 $open:			'Open Sans', sans-serif;
 
-$white: 				#ffffff;	//blanco
-$purple:				#5E0D8B;	//morado top
-$menu-top:				#E3B2FF;	// morado menu top
-$etomin:				#FF5959;	// etomin
+$trans:					transparent;	
+$white: 				#ffffff;		//blanco
+$purple:				#5E0D8B;		//morado top
+$rosa:					#a03c87;
+$moradito:				#7F84BF;
+$menu-top:				#E3B2FF;		// morado menu top
+$etomin:				#FF5959;		// etomin
+$texto:					#888888;
+$textoscuro:			#4D4D4D;		// texto
+$textogris:				#969696;		// texto gris
+$textomorado:			#5E0D8B;		// texto morado
+$bggris:				#f5f5f7;
 
 $f11:					0.688rem;
 $f12:					0.750rem;
@@ -20,10 +28,14 @@ $f18:					1.125rem;
 $f19:					1.188rem;
 $f20:					1.250rem;
 $f22:					1.375rem;
+$f24:					1.500rem;
 $f25:					1.563rem;
 $f30:					1.875rem;
-
-
+$f36:					2.250rem;
+$f40:					2.500rem;
+$f60:					3.750rem;
+$f64:					4rem;
+$f80:					5rem;
 
 $path--rel:				"../img";
 
@@ -57,6 +69,14 @@ $path--rel:				"../img";
 	background-size: $bgsize;
 }
 
+@mixin bg2 ($color, $url, $repeat, $position, $bgsize) {
+	background-color: $color;
+	background-image: url('#{$path--rel}/#{$url}');
+	background-repeat: $repeat;
+	background-position: $position;
+	background-size: $bgsize;
+}
+
 @mixin background-image($img, $background-position, $background-color) {
     background-image: url('#{$path--rel}/#{$img}');
     background-repeat: no-repeat;
@@ -71,6 +91,163 @@ $path--rel:				"../img";
 	transition: all $tiempo ease-in-out;
 }
 
+@mixin rotate($deg) {
+	-webkit-transform: rotate($deg);
+	-moz-transform: rotate($deg);
+	-o-transform: rotate($deg);
+	-ms-transform: rotate($deg);
+	transform: rotate($deg);
+}
+
+
+
+
+// BENEFICIOS ::::::::: ::::::::::::: ::::::::::: 
+
+.beneficios {
+	background-color: $white;
+	text-align: center;
+	padding: 3em 0 3em;
+	h2 {
+		color: $etomin;
+		font-size: $f24;
+		font-weight: 600;
+		margin-bottom: .5em;
+	}
+	p {
+		font-size: $f16;
+		color: $textogris;
+		margin-bottom: 2.5em;
+	}
+	ul {
+		margin: 0;
+		padding: 0 1em 2em 1em;
+		overflow: hidden;
+		li {
+			float: left;
+			width: 30.65%;
+			background-color: $rosa;
+			margin: 0 2% 0;
+			padding: 2em 2% 2em;
+			min-height: 16.7em;
+			@include bg2 ($rosa, 'beneficios-pakke-bg.jpg', repeat, left top, contain);
+			@include box-shadow-out(2px, 4px, 20px, rgba(0, 0, 0, 0.4));
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+			figure {
+				color: $white;
+				img {
+					height: auto;
+					max-height: 80px;
+					margin-bottom: 1em;
+				}
+				figcaption {
+					font-size: $f20;
+					font-weight: 600;
+					margin-bottom: .5em;
+				}
+			}
+		}
+	}
+	&.empresas {
+		background-color: $bggris;
+	}
+	@media screen and (max-width:  1000px){
+		ul {
+			li {
+				width: 32%;
+				margin: 0 1% 0;
+			}
+		}
+	}
+	@media screen and (max-width:  1000px){
+		ul {
+			li {
+				width: 100%;
+				margin: 0 0 2em 0;
+				min-height: 3em;
+				padding: 1em 5% 2em;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+// RECOLECCION ::::::::: ::::::::::::: ::::::::::: 
+
+.griswp {
+	position: relative;
+	width: 100%;
+	@include bg(#3c3c3b, 'recoleccion.jpg', center center, cover);
+	color: $white;
+	padding: 5em 0 5em;
+	text-align: center;
+	p {
+		font-size: $f20;
+		margin-bottom: 1em;
+	}
+	h2 {
+		font-size: $f60;
+		font-weight: 800;
+		margin-bottom: .4em;
+	}
+	a {
+		color: $white;
+		display: block;
+		font-size: $f36;
+		font-weight: 800;
+		margin-top: .75em;
+	}
+	@media screen and (max-width:  1000px){
+		h2 {
+			font-size: 3.1rem;
+		}
+	}
+	@media screen and (max-width:  600px){
+		padding: 3em 0 4em;
+		h2 {
+			line-height: 1.2em;
+			margin-bottom: .75em;
+		}
+	}
+	@media screen and (max-width:  450px){
+		p {
+			font-size: $f18;
+		}
+		a {
+			font-size: 1.9rem;
+			border-bottom: solid thin rgba(255,255,255,0.5);
+			display: inline-block;
+		}
+	}
+	@media screen and (max-width:  376px){
+		a {
+			font-size: 1.6rem;
+			margin-top: 1em;
+		}
+	}
+	@media screen and (max-width:  320px){
+		h2 {
+			font-size: 2.8rem;
+			line-height: 1.2em;
+			margin-bottom: .75em;
+		}
+		a {
+			font-size: 1.35em;
+			margin-top: 1em;
+		}
+	}
+}
 
 
 
@@ -80,6 +257,62 @@ $path--rel:				"../img";
 
 
 
+// CLIENTES ::::::::: ::::::::::::: ::::::::::: 
+
+.logos {
+	padding: 4em 0 4em;
+	position: relative;
+	text-align: center;
+	h2 {
+		color: $etomin;
+		font-size: $f24;
+		font-weight: 600;
+		margin-bottom: 1em;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		li {
+			float: left;
+			width: 22%;
+			margin: 0 2% 0;
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+			figure {
+				img {
+					max-width: 100%;
+				}
+			}
+		}
+	}
+	@media screen and (max-width:  600px){
+		ul {
+			li {
+				width: 45%;
+				margin-bottom: 3em;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+// TESTIMONIOS ::::::::: ::::::::::::: ::::::::::: 
+
+#testimonios {
+	padding: 5em 0 5em;
+	position: relative;
+	@include bg($etomin, 'pakke-testimonios-bg.jpg', center center, cover);
+}
 
 
 
@@ -88,7 +321,297 @@ $path--rel:				"../img";
 
 
 
+// SOCIOS ::::::::: ::::::::::::: ::::::::::: 
 
+.socios.logos {
+	padding: 3em 0 3em;
+	@include box-shadow-out(0px, 3px, 30px, rgba(0, 0, 0, 0.3));
+	.wp {
+	}
+	h2 {
+		margin-bottom: .25em;
+	}
+	p {
+		color: $textogris;
+		margin-bottom: 2em;
+	}
+	ul {
+		li {
+			float: none;
+			display: inline-block;
+			vertical-align: middle;
+			width: 21.5%;
+		}
+	}
+	@media screen and (max-width:  600px){
+		padding: 3em 0 1em;
+		ul {
+			li {
+				width: 40%;
+				margin-bottom: 3em;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+// PRECIO ::::::::: ::::::::::::: ::::::::::: 
+
+#precio {
+	text-align: center;
+	padding: 5em 0 4em;
+	position: relative;
+	h2 {
+		color: $textomorado;
+		font-size: $f24;
+		font-weight: 600;
+		margin: 0 auto 2em;
+		width: 55%;
+	}
+	ul {
+		margin: 0;
+		padding: 0 0 1em;
+		overflow: hidden;
+		li {
+			float: left;
+			width: 29.3%;
+			margin: 0 3% 0;
+			padding: 0 2.5% 0;
+			position: relative;
+			&:after {
+				content: '';
+				background-color: red;
+				width: 2px;
+				height: 120px;
+				position: absolute;
+				top: .5em;
+				right: -2.25em;
+				@include bg($trans, 'pakke-precios-divider.svg', top left, cover);
+			}
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+				&:after {
+					display: none;
+				}
+			}
+			figure {
+				img {
+					max-height: 80px;
+					display: block;
+					margin: 0 auto 1em;
+				}
+				figcaption {
+					color: $textogris;
+					width: 80%;
+					margin: 0 auto 0;
+				}
+			}
+		}
+	}
+	a {
+		display: inline-block;
+		margin: 2em auto 0;
+		background-color: $etomin;
+		color: $white;
+		font-size: $f20;
+		padding: .5em 2em;
+		@include border-radius(40px);
+		&:hover {
+			@include opacity(0.3);
+		}
+	}
+	@media screen and (max-width:  800px){
+		h2 {
+			width: 100%;
+		}
+		ul {
+			li{
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+	@media screen and (max-width:  600px){
+		ul {
+			li {
+				width: 100%;
+				margin: 0 0 3em 0;
+			}
+		}
+		a {
+			margin: 1em auto 0;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+// DESARROLLADORES ::::::::: ::::::::::::: ::::::::::: 
+
+.griswp#desarrolladores {
+	padding: 4em 0 4em;
+	@include bg(#3c3c3b, 'pakke-desarrolladores-bg.jpg', center center, cover);
+	p:nth-child(3) {
+		width: 60%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	a {
+		font-weight: 600;
+		font-size: $f22;
+		border: solid 2px $white;
+		display: inline-block;
+		padding: .5em 2em;
+		@include border-radius(40px);
+		&:hover {
+			@include opacity(0.3);
+		}
+	}
+	@media screen and (max-width:  800px){
+		p:nth-child(3) {
+			width: 90%;
+		}
+	}
+	@media screen and (max-width:  600px){
+		p:nth-child(3) {
+			width: 100%;
+		}
+	}
+	@media screen and (max-width:  376px){
+		h2 {
+			font-size: 2.7rem;
+		}
+	}
+	@media screen and (max-width:  320px){
+		h2 {
+			font-size: 2.3rem;
+		}
+	}
+}
+
+	
+
+
+
+
+
+
+// CONTACTO ::::::::: ::::::::::::: ::::::::::: 
+#contacto {
+	position: relative;
+	width: 100%;
+	padding: 4em 0 5em;
+	min-height: 704px;
+	@include bg ($white, 'contacto-pakke-bg.jpg', right top, cover);
+	.wp {
+		padding: 0 0 0 27em;
+	}
+	h2 {
+		color: $textoscuro;
+		font-size: $f40;
+		font-weight: 800;
+		margin: 0 0 .7em;
+	}
+	.mapa {
+		display: inline-block;
+		background-color: orange;
+		width: 40%;
+		max-width: 280px;
+		vertical-align: middle;
+		margin: 0 3% 3em 0;
+		iframe {
+			border: 0;
+			outline: 0;
+			display: block;
+			width: 280px;
+			height: 200px;
+		}
+	}
+	.txt {
+		display: inline-block;
+		width: 60%;
+		color: $textogris;
+		address {
+			margin: 0 0 1em 0;
+			line-height: 1.5em;
+			width: 90%;
+		}
+		a {
+			display: block;
+			font-size: $f16;
+			font-weight: 700;
+			color: $moradito;
+			margin: .5em 0 0 0;
+			&:hover {
+				@include opacity(0.3);
+			}
+		}
+	}
+	form {
+		position: relative;
+		width: 100%;
+		overflow: hidden;
+		display: block;
+		p {
+			width: 50%;
+			float: left;
+			padding: 0 6% 0 0;
+			margin: 0 0 1.85em 0;
+			label {
+				display: none;
+			}
+			input {
+				width: 100%;
+				height: 25px;
+				max-height: 25px;
+				background-color: $trans;
+				outline: none;
+				border: none;
+				border-bottom: solid 2px #969696;
+				padding: 0 0 .5em 0;
+				color: $moradito;
+				font-weight: 600;
+				&:focus {
+					border-color: $moradito;
+				}
+			}
+
+			&:last-child {
+				margin: 0;
+				padding: 0 0 2em 0;
+				input {
+					width: 140px;
+					max-height: 100px;
+					min-height: auto;
+					height: auto;
+					color: $white;
+					background-color: $moradito;
+					padding: .5em 1em;
+					border: none;
+					cursor: pointer;
+					@include border-radius(18px);
+					&:hover {
+						@include opacity(0.3);
+					}
+				}
+			}
+		}
+	}
+}
 
 
 

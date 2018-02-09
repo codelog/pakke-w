@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
+//@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
 
 
 $open:			'Open Sans', sans-serif;
@@ -8,10 +8,13 @@ $trans:					transparent;
 $white: 				#ffffff;		//blanco
 $purple:				#5E0D8B;		//morado top
 $rosa:					#a03c87;
+$moradito:				#7F84BF;
 $menu-top:				#E3B2FF;		// morado menu top
 $etomin:				#FF5959;		// etomin
-$texto:					#888888;		// texto
+$texto:					#888888;
+$textoscuro:			#4D4D4D;		// texto
 $textogris:				#969696;		// texto gris
+$textomorado:			#5E0D8B;		// texto morado
 $bggris:				#f5f5f7;
 
 $f11:					0.688rem;
@@ -25,11 +28,14 @@ $f18:					1.125rem;
 $f19:					1.188rem;
 $f20:					1.250rem;
 $f22:					1.375rem;
+$f24:					1.500rem;
 $f25:					1.563rem;
 $f30:					1.875rem;
+$f36:					2.250rem;
+$f40:					2.500rem;
+$f60:					3.750rem;
 $f64:					4rem;
 $f80:					5rem;
-
 
 $path--rel:				"../img";
 
@@ -76,6 +82,15 @@ $path--rel:				"../img";
 	-ms-transition: all $tiempo ease-in-out;
 	transition: all $tiempo ease-in-out;
 }
+
+@mixin rotate($deg) {
+	-webkit-transform: rotate($deg);
+	-moz-transform: rotate($deg);
+	-o-transform: rotate($deg);
+	-ms-transform: rotate($deg);
+	transform: rotate($deg);
+}
+
 
 
 
@@ -182,7 +197,6 @@ body {
 	margin: 0 auto 0;
 	display: block;
 }
-
 
 
 
@@ -674,42 +688,44 @@ header {
 				font-size: $f16;
 				line-height: 1.2em;
 			}
+			@media screen and (max-width:  1000px){
+				figcaption {
+					font-size: $f15;
+				}
+			}
+			@media screen and (max-width:  800px){
+				width: 100%;
+				text-align: center;
+				margin: 0 auto 3em;
+				&:last-child {
+					margin-bottom: 0;
+				}
+				img {
+					margin-bottom: .5em;
+				}
+				figcaption {
+					text-align: center;
+					max-width: 100%;
+					font-size: $f16;
+				}
+				&:after {
+					@include rotate(90deg)
+					height: 2.5px;
+					bottom: -30px;
+					left: 50%;
+					right: auto;
+					top: auto;
+					margin: 0;
+				}
+				&:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4){
+					&:after {
+						width: 35px;
+					}
+				}
+			}
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

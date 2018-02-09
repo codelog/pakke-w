@@ -2,7 +2,7 @@ console.log('::::: ::: pakke 7 feb 18');
 
 
 
-
+// MENU
 function menu() {
 
 	var opennn = false;
@@ -28,9 +28,22 @@ function menu() {
 		$('#menu').removeClass('activo');
 		opennn = false;
 	})
-
-
 }
+
+
+// MENU BAJA
+
+
+// SLIDER TESTIMONIOS
+
+
+// CONTACTO
+
+
+// FORM NEWSLETTER
+
+
+
 
 
 
