@@ -1035,11 +1035,46 @@ footer {
 	position: fixed;
 	z-index: 999;
 	width: 100%;
-	top: 0;
+	top: -150%;
 	left: 0;
 	background-color: $white;
 	margin: 0;
 	padding: 0;
+	@include transition(0.5s);
+	&.activo {
+		top: 0;
+	}
+	.menu {
+		padding-top: .6em;
+		padding-bottom: .8em;
+		.wp {
+			overflow: hidden;
+			padding-bottom: .4em;
+			h1 {
+				img {
+					 max-width: 130px;
+				}
+			}
+			#menu {
+				ul {
+					li {
+						border-color: $textogris;
+						a {
+							color: $texto;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 1000px){
+	#menu-scroll {
+		display: none !important;
+		&.activo {
+			display: none !important;
+		}
+	}
 }
 
 
