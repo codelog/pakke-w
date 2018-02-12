@@ -56,6 +56,12 @@ $path--rel:				"../img";
 	box-shadow: $x $y $blur $color;
 }
 
+@mixin drop-shadow($x, $y, $blur, $color) {
+	-webkit-filter: drop-shadow($x $y $blur $color);
+	-moz-filter: drop-shadow($x $y $blur $color);
+	filter: drop-shadow($x $y $blur $color);
+}
+
 @mixin opacity($numero) {
 	$ms:  $numero * 100;
 	filter: alpha(opacity=$ms);
@@ -79,10 +85,10 @@ $path--rel:				"../img";
 }
 
 @mixin background-image($img, $background-position, $background-color) {
-    background-image: url('#{$path--rel}/#{$img}');
-    background-repeat: no-repeat;
-    background-position: $background-position;
-    background-color: $background-color;
+	background-image: url('#{$path--rel}/#{$img}');
+	background-repeat: no-repeat;
+	background-position: $background-position;
+	background-color: $background-color;
 }
 
 @mixin transition($tiempo) {
@@ -104,7 +110,6 @@ $path--rel:				"../img";
 
 
 // BENEFICIOS ::::::::: ::::::::::::: ::::::::::: 
-
 .beneficios {
 	background-color: $white;
 	text-align: center;
@@ -181,11 +186,7 @@ $path--rel:				"../img";
 
 
 
-
-
-
 // RECOLECCION ::::::::: ::::::::::::: ::::::::::: 
-
 .griswp {
 	position: relative;
 	width: 100%;
@@ -254,12 +255,7 @@ $path--rel:				"../img";
 
 
 
-
-
-
-
 // CLIENTES ::::::::: ::::::::::::: ::::::::::: 
-
 .logos {
 	padding: 4em 0 4em;
 	position: relative;
@@ -306,9 +302,7 @@ $path--rel:				"../img";
 
 
 
-
 // TESTIMONIOS ::::::::: ::::::::::::: ::::::::::: 
-
 #testimonios {
 	padding: 5em 0 5em;
 	position: relative;
@@ -320,10 +314,7 @@ $path--rel:				"../img";
 
 
 
-
-
 // SOCIOS ::::::::: ::::::::::::: ::::::::::: 
-
 .socios.logos {
 	padding: 3em 0 3em;
 	@include box-shadow-out(0px, 3px, 30px, rgba(0, 0, 0, 0.3));
@@ -360,9 +351,7 @@ $path--rel:				"../img";
 
 
 
-
 // PRECIO ::::::::: ::::::::::::: ::::::::::: 
-
 #precio {
 	text-align: center;
 	padding: 5em 0 4em;
@@ -458,11 +447,7 @@ $path--rel:				"../img";
 
 
 
-
-
-
 // DESARROLLADORES ::::::::: ::::::::::::: ::::::::::: 
-
 .griswp#desarrolladores {
 	padding: 4em 0 4em;
 	@include bg(#3c3c3b, 'pakke-desarrolladores-bg.jpg', center center, cover);
@@ -503,8 +488,6 @@ $path--rel:				"../img";
 		}
 	}
 }
-
-	
 
 
 
@@ -636,7 +619,16 @@ $path--rel:				"../img";
 			font-weight: 400;
 		}
 	}
-	@media screen and (max-width:  1024px){
+	@media screen and (max-width:  1280px){
+		.wp {
+			padding: 0 0 0 19em;
+			.txt {
+				width: 56%;
+				vertical-align: -2em;
+			}
+		}
+	}
+	@media screen and (max-width:  1025px){
 		background-position: 60% top;
 		.wp {
 			padding: 0 0 0 17em;
@@ -649,7 +641,7 @@ $path--rel:				"../img";
 	@media screen and (max-width:  1000px){
 		background-position: 85% top;
 		.wp {
-			padding: 0 0 0 10em;
+			padding: 0 0 0 4em;
 		}
 	}
 	@media screen and (max-width:  800px){
@@ -668,7 +660,7 @@ $path--rel:				"../img";
 				width: 52%;
 				address {
 					width: 90%;
-					margin: 0 auto 1em;
+					margin: 0 0 1em;
 				}
 			}
 			form {
@@ -724,9 +716,7 @@ $path--rel:				"../img";
 
 
 
-
 // FOOTER ::::::::: ::::::::::::: ::::::::::: 
-
 footer {
 	position: relative;
 	width: 100%;
@@ -1030,7 +1020,6 @@ footer {
 
 
 // MENU FLOTANTE
-
 #menu-scroll {
 	position: fixed;
 	z-index: 999;
@@ -1040,7 +1029,7 @@ footer {
 	background-color: $white;
 	margin: 0;
 	padding: 0;
-	@include transition(0.5s);
+	@include transition(0.6s);
 	&.activo {
 		top: 0;
 	}
@@ -1052,7 +1041,7 @@ footer {
 			padding-bottom: .4em;
 			h1 {
 				img {
-					 max-width: 130px;
+					max-width: 130px;
 				}
 			}
 			#menu {
@@ -1086,6 +1075,137 @@ footer {
 
 
 
+// VIDEO ::::::::: ::::::::::::: :::::::::::
+#video {
+	position: fixed;
+	z-index: 2147483650;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: none;
+	.video {
+		position: absolute;
+		z-index: 9;
+		top: 5vh;
+		left: 50%;
+		margin: 0 0 0 -45vw;
+		iframe {
+			display: block;
+			outline: 0;
+			border: 0;
+			width: 90vw;
+			height: 90vh;
+			
+		}
+	}
+	.btn-close {
+		position: absolute;
+		z-index: 10;
+		width: 47px;
+		height: 47px;
+		top: 2%;
+		right: 2%;
+		text-indent: -99999px;
+		display: block;
+		@include bg ($trans, 'pakke-cerrar-video.svg', center center, 45px);
+		@include drop-shadow(0px, 1px, 5px, rgba(0,0,0,0.5));
+	}
+	.bg {
+		position: absolute;
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba(0,0,0,0.6);
+	}
+	&.fadein {
+		animation-name: fade-in;
+		animation-duration: 0.6s;
+		display: block;
+	}
+	&.fadeout {
+		animation-name: fade-out;
+		animation-duration: 0.6s;
+	}
+}
+#intercom-container {
+	z-index: 21474836 !important;
+}
+body.videoWp {
+	overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ANIMACION ::::::::: ::::::::::::: :::::::::::
+@-webkit-keyframes fade-in {
+	0% { 
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@-moz-keyframes fade-in {
+	0% { 
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes fade-in {
+	0% { 
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@-webkit-keyframes fade-out {
+	0% { 
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@-moz-keyframes fade-out {
+	0% { 
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes fade-out {
+	0% { 
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
 
 
 
