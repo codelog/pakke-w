@@ -109,6 +109,39 @@ $path--rel:				"../img";
 
 
 
+
+
+form {
+	p {
+		input {
+			&.error {
+				border-color: #ef5476 !important;
+				color: #ef5476 !important;
+				&::-webkit-input-placeholder { 
+					color: #ef5476 !important;
+				}
+				&:-moz-placeholder {
+					color: #ef5476 !important;
+				}
+				&::-moz-placeholder {
+					color: #ef5476 !important;
+				}
+				&:-ms-input-placeholder {
+					color: #ef5476 !important;
+				}
+			}
+		}
+		&.mensajes {
+			color: $white;
+			font-size: $f14 !important;
+			font-weight: 600;
+		}
+	}
+}
+
+
+
+
 // BENEFICIOS ::::::::: ::::::::::::: ::::::::::: 
 .beneficios {
 	background-color: $white;
@@ -301,13 +334,6 @@ $path--rel:				"../img";
 
 
 
-
-// TESTIMONIOS ::::::::: ::::::::::::: ::::::::::: 
-#testimonios {
-	padding: 5em 0 5em;
-	position: relative;
-	@include bg($etomin, 'pakke-testimonios-bg.jpg', center center, cover);
-}
 
 
 
@@ -538,7 +564,7 @@ $path--rel:				"../img";
 			font-size: $f16;
 			font-weight: 700;
 			color: $moradito;
-			margin: .5em 0 0 0;
+			margin: .75em 0 0 0;
 			&:hover {
 				@include opacity(0.3);
 			}
@@ -568,16 +594,47 @@ $path--rel:				"../img";
 				padding: 0 0 .5em 0;
 				color: $moradito;
 				font-weight: 600;
-				-webkit-appearance: none;
-				-moz-appearance: none;
-				appearance: none;
 				@include border-radius(0);
 				&:focus {
 					border-color: $moradito;
 				}
 			}
+			&:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4), &:last-child {
+				input {
+					-webkit-appearance: none;
+					-moz-appearance: none;
+					appearance: none;
+				}
+			}
+			&:nth-child(5) {
+				width: 100%;
+				display: block;
+				margin-top: -.5em;
+				input {
+					display: inline-block;
+					width: 20px;
+					vertical-align: middle;
+					color: rgba(0,0,0,0.4);
+				}
+				label {
+					display: inline-block;
+					padding-left: .25em;
+					font-size: 0.938rem;
+					vertical-align: middle;
+					color: rgba(0,0,0,0.4);
+					font-weight: 600;
+					a {
+						color: rgba(0,0,0,0.4);
+						border-bottom: solid thin rgba(0,0,0,0.4);
+						&:hover {
+							@include opacity(0.3);
+						}
+					}
+				}
+			}
 
 			&:last-child {
+				width: 100%;
 				margin: 0;
 				padding: 0 0 2em 0;
 				input {
@@ -599,6 +656,14 @@ $path--rel:				"../img";
 						border-color: $error;
 						color: $error;
 					}
+				}
+				span {
+					padding: 0 0 0 2em;
+					display: inline-block;
+					vertical-align: middle;
+					color: #ef5476;
+					font-size: $f14;
+					font-weight: 600;
 				}
 			}
 		}
@@ -691,7 +756,13 @@ $path--rel:				"../img";
 				margin: 0 auto 2em;
 			}
 			form {
-				p {
+				p {	
+					&:nth-child(5) {
+						input {
+							border: solid thin rgba(0,0,0,0.3);
+							@include border-radius(8px);
+						}
+					}
 					&:last-child {
 						text-align: center;
 						input {
@@ -702,6 +773,24 @@ $path--rel:				"../img";
 							padding: 1em 0 1em;
 							font-size: $f18;
 							@include border-radius(40px);
+						}
+						span.mensajes {
+							display: block;
+							width: 100%;
+							padding: 1.5em 0 2em;
+						}
+					}
+				}
+			}
+		}
+	}
+	@media screen and (max-width:  320px){
+		.wp {
+			form {
+				p {	
+					&:nth-child(5) {
+						label {
+							font-size: $f13;
 						}
 					}
 				}
@@ -804,10 +893,23 @@ footer {
 						width: 100%;
 						display: block;
 						margin: 0 0 1em 0;
+						&.mensajes {
+							color: #E3B2FF;
+						}
+						label {
+							a {
+								color: $white;
+								border-bottom: solid thin $white;
+								&:hover {
+									@include opacity(0.3);
+								}
+							}
+						}
 						input {
 							width: 100%;
-							outline: 0;
+							outline: none;
 							color: $white;
+							font-weight: 600;
 						}
 						&:first-child {
 							input {
@@ -854,6 +956,7 @@ footer {
 								@include opacity(0.3);
 							}
 						}
+
 					}
 					::-webkit-input-placeholder { 
 						color: rgba(255,255,255,0.6);
@@ -884,6 +987,9 @@ footer {
 						margin: 0 1% 0;
 						a {
 							display: block;
+							&:hover {
+								@include opacity(0.3);
+							}
 						}
 					}
 				}
@@ -1136,6 +1242,90 @@ footer {
 body.videoWp {
 	overflow: hidden;
 }
+
+
+
+
+
+
+
+
+
+
+
+// TESTIMONIOS SLIDER ::::::::: ::::::::::::: :::::::::::
+#testimonios {
+	padding: 3.5em 0 1em;
+	position: relative;
+	@include bg($etomin, 'pakke-testimonios-bg.jpg', center center, cover);
+	@media screen and (max-width: 1000px) {
+		padding: 2em 0 1em;
+	}
+	#full-width-slider {
+		width: 100%;
+		.rsContent {
+			position: relative;
+			.wpc {
+				position: relative;
+				width: 100%;
+				max-width: 750px;
+				height: 350px;
+				margin: 0 auto 0;
+				@include bg($trans, 'pakke-testimonio.png', top center, 750px);
+				.txt {
+					margin: 0 0 0 210px;
+					padding: 100px 0 0 0;
+					width: 485px;
+					p {
+						color: $white;
+						font-size: $f20;
+						line-height: 1.4em;
+						@media screen and (max-width: 1000px) {
+							font-size: $f18;
+						}
+					}
+				}
+				.autor {
+					width: 100%;
+					text-align: center;
+					position: absolute;
+					z-index: 5;
+					left: 0;
+					top: 290px;
+					padding: 0 0 0 40px;
+					@media screen and (max-width: 1000px) {
+						top: 250px;
+					}
+					span {
+						display: block;
+						width: 100%;
+						font-size: $f16;
+						&:nth-child(1) {
+							font-style: italic;
+						}
+						&:nth-child(2) {
+							color: #5D0E8B;
+							font-weight: 600;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

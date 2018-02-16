@@ -3,19 +3,37 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Pakke | Soluciones de Envío</title>
-
-	<meta name="description" content="Controla toda tu paquetería desde una sola plataforma con Pakke Soluciones de Envío.">
-	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	
+	<title>Pakke | Controla toda tu paquetería desde una sola plataforma de envío</title>
+
+	<meta name="description" content="Controla con Pakke toda tu paquetería desde una sola plataforma de envío. El sistema te muestra la mejor opción de mensajería para que tu paquete llegue a su destino. Envía todos tus paquetes sin salir de tu casa programando la recolección de cada envío.">
+	<meta name="keywords" content="pakke, venders, soluciones de envío, envíos, mensajería, recolección de paquetes, paquetería, ventas, negocio, tienda, ecommerce, codelog">
+	
+	<!-- FACEBOOK -->
+	<meta property="og:url"             content="http://www.pakke.mx" />
+	<meta property="og:type"            content="website" />
+	<meta property="og:title"           content="Pakke" />
+	<meta property="og:description"		content="Controla toda tu paquetería desde una sola plataforma con Pakke Soluciones de Envío." />
+	<meta property="og:image"           content="http://www.pakke.mx/img/favicon-apple.png" />
+
+	<!-- TWIITER -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@pakke_mx ">
+	<meta name="twitter:creator" content="@codelogg">
+	<meta name="twitter:title" content="Pakke">
+	<meta name="twitter:description" content="Controla toda tu paquetería desde una sola plataforma con Pakke Soluciones de Envío.">
+	<meta name="twitter:image" content="http://www.pakke.mx/img/favicon-apple.png">
+
+	<meta itemprop="image" content="http://www.pakke.mx/img/favicon-apple.png" />
 
 	<!-- ICN -->
-	<!-- METATAGS -->
-	<!-- TWITTER -->
-	<!-- FACEBOOK -->
+	<link rel="apple-touch-icon" href="http://www.pakke.mx/img/favicon-apple.png" />
+	<link rel="shortcut icon" type="image/x-icon" href="http://www.pakke.mx/img/favicon.ico" />
+	<link rel="shortcut icon" type="image/svg+xml" href="http://www.pakke.mx/img/favicon.svg" />
+	<link rel="shortcut icon" type="image/png" href="http://www.pakke.mx/img/favicon.png" />
 
 	<!-- ESTILOS -->
-	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet" async> -->
 	<link rel="stylesheet" href="css/header.min.css" async>
 
 
@@ -287,7 +305,67 @@
 	<!-- TESTIMONIOS -->
 	<div id="testimonios">
 		<div class="wp">
-			
+
+			<div id="full-width-slider" class="royalSlider heroSlider rsMinW">
+
+				<!-- SLIDER 1 -->
+				<div class="rsContent">
+					<div class="wpc">
+						<!-- <figure class="logo">
+							<img src="img/.png" alt="" />
+						</figure>
+						<figure class="perfil">
+							<img src="img/.png" alt="" />
+						</figure> -->
+						<div class="txt">
+							<p>1 Desde que comencé a usar Pakke, mis clientes están más satisfechos con sus pedidos, pues llegan en el tiempo establecido, y he podido ahorrar hasta un 50% en cada envío.</p>
+						</div>
+						<div class="autor">
+							<span>John Doe</span>
+							<span>Liverpool</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- SLIDER 3 -->
+				<div class="rsContent">
+					<div class="wpc">
+						<!-- <figure class="logo">
+							<img src="img/.png" alt="" />
+						</figure>
+						<figure class="perfil">
+							<img src="img/.png" alt="" />
+						</figure> -->
+						<div class="txt">
+							<p>1 Desde que comencé a usar Pakke, mis clientes están más satisfechos con sus pedidos, pues llegan en el tiempo establecido, y he podido ahorrar hasta un 50% en cada envío.</p>
+						</div>
+						<div class="autor">
+							<span>John Doe</span>
+							<span>Liverpool</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- SLIDER 3 -->
+				<div class="rsContent">
+					<div class="wpc">
+						<!-- <figure class="logo">
+							<img src="img/.png" alt="" />
+						</figure>
+						<figure class="perfil">
+							<img src="img/.png" alt="" />
+						</figure> -->
+						<div class="txt">
+							<p>1 Desde que comencé a usar Pakke, mis clientes están más satisfechos con sus pedidos, pues llegan en el tiempo establecido, y he podido ahorrar hasta un 50% en cada envío.</p>
+						</div>
+						<div class="autor">
+							<span>John Doe</span>
+							<span>Liverpool</span>
+						</div>
+					</div>
+				</div>
+				
+			</div>
 		</div>
 	</div>
 
@@ -379,25 +457,26 @@
 				<a href="tel:26299848" target="_blank" title="¡Llámanos!">+52 (55) 2629 9848</a>
 				<a href="mailto:soporte@pakke.mx" target="_blank" title="¡Escríbenos!">soporte@pakke.mx</a>
 			</div>
-			<form action="">
+			<form id="formContacto" method="post" action="#">
 				<p>
-					<label for=""></label>
-					<input placeholder="Nombre" type="text">
+					<input placeholder="Nombre" type="text" tabindex="1" id="cname">
 				</p>
 				<p>
-					<label for=""></label>
-					<input placeholder="Email" type="email" required>
+					<input placeholder="Email" type="email" tabindex="2" id="cemail" required>
 				</p>
 				<p>
-					<label for=""></label>
-					<input placeholder="Teléfono" type="tel">
+					<input placeholder="Teléfono" type="tel" tabindex="3" id="cphone">
 				</p>
 				<p>
-					<label for=""></label>
-					<input placeholder="Mensaje" type="text">
+					<input placeholder="Mensaje" type="text" tabindex="4" id="cmessage">
 				</p>
 				<p>
-					<input type="submit" value="Enviar">
+					<input type='checkbox' id='ccondiciones' tabindex="5" name='ccondiciones' required />
+					<label for='ccondiciones'>Debes aceptar nuestro <a href='http://help.pakke.mx/aviso-de-privacidad/' target='_blank'>Aviso de privacidad</a></label>
+				</p>
+				<p>
+					<input type="submit" id="csend" value="Enviar" tabindex="6" />
+					<span class="mensajes"></span>
 				</p>
 			</form>
 		</div>
@@ -440,16 +519,17 @@
 			<div class="col">
 				<h3>Suscríbete</h3>
 				<p>Recibe las novedades de nuestras soluciones.</p>
-				<form action="">
+				<form action="//venders.us15.list-manage.com/subscribe/post?u=7615883841e2879cfa4167f10&amp;id=9b24075336" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate form-grp clearfix grpelem" target="_blank" novalidate>
 					<p>
-						<input type="email" placeholder="Email" required>
+						<input type="email" placeholder="Email" id="mce-EMAIL" name="EMAIL" required/>
 					</p>
 					<p>
-						<input type="checkbox" required>
-						<label for="">Debes aceptar nuestro aviso de privacidad</label>
+						<input type='checkbox' id='condiciones' name='condiciones_chk' required />
+						<label for='condiciones'>Debes aceptar nuestro <a href='http://help.pakke.mx/aviso-de-privacidad/' target='_blank'>Aviso de privacidad</a></label>
 					</p>
+					<p class="mensajes"></p>
 					<p>
-						<input type="submit" value="Suscribirme">
+						<input id="mc-embedded-subscribe" type="submit" name="subscribe" value="Suscribirme" />
 					</p>
 				</form>
 			</div>
@@ -463,6 +543,11 @@
 					<li>
 						<a href="https://twitter.com/pakke_mx" target="_blank" title="Síguenos en Twitter">
 							<img src="img/pakke-twitter-footer.svg" alt="Twitter Pakke">
+						</a>
+					</li>
+					<li>
+						<a href="tel:26299848" target="_blank" title="¡Llámanos!">
+							<img src="img/pakke-whatsapp-footer.svg" alt="Teléfono Pakke">
 						</a>
 					</li>
 				</ul>
@@ -486,12 +571,6 @@
 
 
 
-	
-
-
-
-
-
 	<script>
 		var resource = document.createElement('link'); 
 		resource.setAttribute("rel", "stylesheet");
@@ -501,14 +580,18 @@
 		head.appendChild(resource);
 	</script>
 
+	<script>
+		var resource = document.createElement('link'); 
+		resource.setAttribute("rel", "stylesheet");
+		resource.setAttribute("href","css/slider.min.css");
+		resource.setAttribute("type","text/css");      
+		var head = document.getElementsByTagName('head')[0];
+		head.appendChild(resource);
+	</script>
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous" async ></script>
 
 	<script src="js/script-pakke.min.js" async></script>
-
-
-
-
 
 
 	<!-- ANALYTICS -->
@@ -530,7 +613,6 @@
 	  };
 	</script>
 	<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/luu1zvmi';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
-
 
 </body>
 </html>
