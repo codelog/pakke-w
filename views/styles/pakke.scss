@@ -223,7 +223,7 @@ form {
 .griswp {
 	position: relative;
 	width: 100%;
-	@include bg(#3c3c3b, 'recoleccion.jpg', center center, cover);
+	@include bg(#3c3c3b, 'recoleccion2.jpg', center center, cover);
 	color: $white;
 	padding: 5em 0 5em;
 	text-align: center;
@@ -476,7 +476,7 @@ form {
 // DESARROLLADORES ::::::::: ::::::::::::: ::::::::::: 
 .griswp#desarrolladores {
 	padding: 4em 0 4em;
-	@include bg(#3c3c3b, 'pakke-desarrolladores-bg.jpg', center center, cover);
+	@include bg(#3c3c3b, 'pakke-desarrolladores-bg2.jpg', center center, cover);
 	p:nth-child(3) {
 		width: 60%;
 		margin-left: auto;
@@ -526,7 +526,7 @@ form {
 	width: 100%;
 	padding: 4em 0 5em;
 	min-height: 704px;
-	@include bg ($white, 'contacto-pakke-bg.jpg', right top, cover);
+	@include bg ($white, 'contacto-pakke-bg2.jpg', right top, cover);
 	.wp {
 		padding: 0 0 0 27em;
 	}
