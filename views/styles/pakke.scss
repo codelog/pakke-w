@@ -183,6 +183,7 @@ form {
 					height: auto;
 					max-height: 80px;
 					margin-bottom: 1em;
+					width: 100%;
 				}
 				figcaption {
 					font-size: $f20;
@@ -389,7 +390,43 @@ form {
 		margin: 0 auto 2em;
 		width: 55%;
 	}
-	ul {
+	.box {
+		background-color: #fff;
+		padding: 2em 2em;
+		clear: both;
+		display: inline-block;
+		margin: 0 auto 5em;
+		@include box-shadow-out(0, 1px, 10px, rgba(0,0,0,0.2));
+		@include border-radius(12px);
+		h3 {
+			color: $textoscuro;
+			text-align: left;
+			font-size: 5rem;
+			font-weight: 700;
+			margin-bottom: .3em;
+			span:first-child {
+				font-size: 3rem;
+			}
+			span:last-child {
+				font-size: 1.75rem;
+			}
+		}
+		ul {
+			margin: 0;
+			padding: 0;
+			li {
+				text-align: left;
+				padding: 0 0 0 2em;
+				margin: 0 auto 1.5em;
+				color: $textogris;
+				@include bg($trans, 'good.png', left center, 14px 13px);
+			}
+		}
+		@media screen and (max-width:  450px){
+			margin: 0 auto 3em;
+		}
+	}
+	ul.icnn {
 		margin: 0;
 		padding: 0 0 1em;
 		overflow: hidden;
@@ -448,7 +485,7 @@ form {
 		h2 {
 			width: 100%;
 		}
-		ul {
+		ul.icnn {
 			li{
 				&:after {
 					display: none;
@@ -457,7 +494,7 @@ form {
 		}
 	}
 	@media screen and (max-width:  600px){
-		ul {
+		ul.icnn {
 			li {
 				width: 100%;
 				margin: 0 0 3em 0;
@@ -1153,7 +1190,7 @@ footer {
 			#menu {
 				ul {
 					li {
-						border-color: $textogris;
+						border-color: rgba(150, 150, 150, 0.3);
 						a {
 							color: $texto;
 						}
