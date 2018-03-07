@@ -430,7 +430,7 @@ header {
 					display: block;
 					font-weight: 600;
 					letter-spacing: .5px;
-					font-size: $f14;
+					font-size: $f16;
 					@include bg($trans, 'telefono-pakke.svg', left center, 13px);
 				}
 				@media screen and (max-width:  600px){
@@ -625,8 +625,9 @@ header {
 			font-size: $f20;
 			font-weight: 300;
 			height: 45px;
-			@include bg ($trans, 'play-pakke.svg', left center, 45px);
-			padding: .45em 2em 0 3em;
+			padding: .5em 2em .5em 3.65em;
+			@include bg ($etomin, 'play-pakke.svg', 25px center, 30px);
+			@include border-radius(18px);
 			&:hover {
 				@include opacity(0.3)
 			}
