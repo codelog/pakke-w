@@ -1,3 +1,4 @@
+// codelog 7 mzo 18
 
 //@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
 
@@ -56,6 +57,12 @@ $path--rel:				"../img";
 	box-shadow: $x $y $blur $color;
 }
 
+@mixin drop-shadow($x, $y, $blur, $color) {
+	-webkit-filter: drop-shadow($x $y $blur $color);
+	-moz-filter: drop-shadow($x $y $blur $color);
+	filter: drop-shadow($x $y $blur $color);
+}
+
 @mixin opacity($numero) {
 	$ms:  $numero * 100;
 	filter: alpha(opacity=$ms);
@@ -79,10 +86,10 @@ $path--rel:				"../img";
 }
 
 @mixin background-image($img, $background-position, $background-color) {
-    background-image: url('#{$path--rel}/#{$img}');
-    background-repeat: no-repeat;
-    background-position: $background-position;
-    background-color: $background-color;
+	background-image: url('#{$path--rel}/#{$img}');
+	background-repeat: no-repeat;
+	background-position: $background-position;
+	background-color: $background-color;
 }
 
 @mixin transition($tiempo) {
@@ -632,7 +639,16 @@ header {
 				@include opacity(0.3)
 			}
 			@media screen and (max-width:  450px){
-				padding: .45em 0em 0 3em;
+				padding: .45em 0em 0 0em;
+				width: 100%;
+				background-position: 20px center;
+			}
+			@media screen and (max-width:  376px){
+				padding: .45em 0em 0 1em;
+			}
+			@media screen and (max-width:  321px){
+				padding: .45em 0em 0 1.5em;
+				background-position: 10px center;
 			}
 		}
 	}

@@ -86,7 +86,6 @@ function menuscroll() {
 	});
 }
 
-
 // VIDEO
 function video() {
 	
@@ -201,6 +200,9 @@ function formContacto() {
 		messages		= $('#formContacto span.mensajes');
 		verificar 		= true;
 
+		loaderr			= $('#formContacto .loader');
+		spinnerr		= $('#formContacto .loader .spinner');
+
 
 	if(!email.value){
 		email2.addClass('error');
@@ -225,6 +227,9 @@ function formContacto() {
 
 	if(verificar){
 
+		spinnerr.fadeIn('swing');
+		loaderr.fadeIn('swing');
+
 		setTimeout(function(){
 			$.ajax({
 				url: "//appservices.next-cloud.mx/rest/services/pipeline/venders/internet/1/send/email/",
@@ -243,7 +248,10 @@ function formContacto() {
 					return a.code?console.log("Error message "): console.log("message ",a.msg)
 				}
 			})
-			messages.html('¡Gracias, pronto recibirás noticias de PAKKE!');
+			//messages.html('¡Gracias, pronto recibirás noticias de PAKKE!');
+			$('#formContacto p').css('opacity', '0');
+			spinnerr.fadeOut('fast');
+			loaderr.html('¡Gracias, pronto recibirás noticias de PAKKE!');
 			//formulario.submit();
 			formulario.show();
 			formulario.trigger('reset');
@@ -251,10 +259,40 @@ function formContacto() {
 				messages.html('');
 				formulario.trigger('reset');
 				formulario.show();
-			}, 7000);
+				$('#formContacto p').css('opacity', '1');
+				loaderr.fadeOut('fast');
+				loaderr.html('');
+				loaderr.append('<div class="spinner" style="display:none;"></div>');
+			}, 8000);
 		}, 500);
 	}
 };
+
+
+// ELIMINAR ESTILO AL MENU SCROLL
+function deleteStyle() {
+	$('#menu-scroll').removeAttr('style');
+}
+
+// FUNCION PARA RECOGER PAQUETE INFO MENSAJERIA
+function recoleccion() {
+	var opennn = false;
+	$('.recoleccion .txt a').on('click', function(e){
+		e.preventDefault();
+		if(opennn === false) {
+
+			$('.mensajerias').addClass('activo');
+			$('.recoleccion .txt a').html('Cerrar información');
+			opennn = true;
+
+		} else {
+
+			$('.mensajerias').removeClass('activo');
+			$('.recoleccion .txt a').html('Cerrar información');
+			opennn = false;
+		}
+	})
+}
 
 
 // SLIDER TESTIMONIALES
@@ -372,12 +410,14 @@ setTimeout(function(){
 	detectarScroll();
 	menu();
 	video();
+	deleteStyle();
 }, 300);
 
 setTimeout(function(){
 	mapaContacto();
 	//sliderr();
 	slider2();
+	recoleccion();
 	$('#mc-embedded-subscribe').on('click', function(e){
 		e.preventDefault();
 		formNewsletter();

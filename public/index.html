@@ -123,7 +123,7 @@
 
 
 	<!-- MENU FLOTANTE STICKY -->
-	<header id="menu-scroll">
+	<header id="menu-scroll" style="position: fixed;z-index: 999;top: -150%;">
 		<div class="menu">
 			<div class="wp">
 				<div class="menu-btn">
@@ -269,13 +269,52 @@
 	<!-- RECOLECCION PAQUETES -->
 	<div class="recoleccion griswp">
 		<div class="wp">
+			<div class="txt">
+				<p>¿Tienes muchos envíos?</p>
+				<h2>Recogemos tu paquete</h2>
+				<p>Una vez que tengas tu paquete listo y tu guía impresa, llama a la mensajería elegida para que pasen a recogerlo ó dejalo en la oficina mas cercana a tu domicilio.</p>
+				<a href="#" title="Ver más información">Información de las mensajerías</a>
+			</div>
+			<div class="mensajerias">
+				<h3>Llama a la mensajería seleccionada para que recojan tu  o tus paquetes.</h3>
+				<ul>
+					<li>
+						<figure>
+							<img src="img/socios/estafeta-logo_poster.png" alt="Estafeta">
+							<figcaption><a href="tel:018003782338" title="¡Llamar!">01 800 3782 338</a></figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<img src="img/socios/fedex-logo_poster.png" alt="FedEx">
+							<figcaption><a href="tel:018000033339" title="¡Llamar!">01 800 0033 339</a></figcaption>
+						</figure>
+					</li>
+					<li>s
+						<figure>
+							<img src="img/socios/dhl-logo_poster.png" alt="DHL">
+							<figcaption><a href="tel:018007656345" title="¡Llamar!">01 800 7656 345</a></figcaption>
+						</figure>
+					</li>
+					<li>
+						<figure>
+							<img src="img/socios/ups-logo_poster.png" alt="UPS">
+							<figcaption><a href="tel:018007433877" title="¡Llamar!">01 800 7433 877</a></figcaption>
+						</figure>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="recoleccion griswp">
+		<div class="wp">
 			<p>¿Tienes muchos envíos?</p>
 			<h2>Recolección de paquetes</h2>
 			<p>Programa una visita para que recojamos todos tus paquetes, solo llámanos.</p>
 			<a href="tel:0180044472553">01 800 444 72553 (PAKKE)</a>
 			<a href="tel:5526299848">+52 (55) 2629 9848</a>
 		</div>
-	</div>
+	</div> -->
 
 
 	<!-- CLIENTES -->
@@ -410,7 +449,7 @@
 	<!-- PRECIO -->
 	<div id="precio">
 		<div class="wp">
-			<h2>Controla toda tu paquetería desde una sola plataforma con Pakke Soluciones de Envío.</h2>
+			<h2>Controla toda tu paquetería desde una sola plataforma con Pakke.</h2>
 			<div class="box">
 				<h3><span>$</span>0<span>MX</span><span> / mes</span></h3>
 				<ul>
@@ -492,6 +531,7 @@
 					<input type="submit" id="csend" value="Enviar" tabindex="6" />
 					<span class="mensajes"></span>
 				</p>
+				<div class="loader"><div class="spinner"></div></div>
 			</form>
 		</div>
 	</div>
