@@ -1491,7 +1491,10 @@ body.videoWp {
 
 // TESTIMONIOS SLIDER ::::::::: ::::::::::::: :::::::::::
 #testimonios {
-	padding: 3.5em 0 1em;
+	// padding: 3.5em 0 1em;
+	// position: relative;
+	// @include bg($etomin, 'pakke-testimonios-bg.jpg', center center, cover);
+	padding: 4em 0 4em;
 	position: relative;
 	@include bg($etomin, 'pakke-testimonios-bg.jpg', center center, cover);
 	@media screen and (max-width: 1000px) {
@@ -1544,6 +1547,56 @@ body.videoWp {
 							font-weight: 600;
 						}
 					}
+				}
+			}
+		}
+	}
+
+	&.logistica {
+		color: #fff;
+		text-align: center;
+		h2 {
+			font-size: 1.5rem;
+			font-weight: 600;
+			margin: 0 auto 2.5em;
+		}
+		ul {
+			margin: 0 auto 1em;
+			padding: 0;
+			display: block;
+			overflow: hidden;
+			width: 90%;
+			li {
+				float: left;
+				width: 20%;
+				margin: 0 0 1em;
+				img {
+					display: block;
+					max-height: 75px;
+					margin: 0 auto 1.5em;
+				}
+				figcaption {
+					font-size: 1.25rem;
+					font-weight: 600;
+					margin-bottom: .5em;
+				}
+			}
+		}
+		p {
+			font-size: 1.25rem;
+			line-height: 1.75em;
+			a {
+				display: inline-block;
+				margin: 2em auto 1em;
+				background-color: $white;
+				color: $etomin;
+				font-size: 1.25rem;
+				font-weight: 600;
+				padding: .5em 2em;
+				border: none;
+				@include border-radius(40px);
+				&:hover {
+					@include opacity(0.3);
 				}
 			}
 		}
