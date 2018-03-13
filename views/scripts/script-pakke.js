@@ -288,7 +288,7 @@ function recoleccion() {
 		} else {
 
 			$('.mensajerias').removeClass('activo');
-			$('.recoleccion .txt a').html('Cerrar información');
+			$('.recoleccion .txt a').html('Información de las mensajerías');
 			opennn = false;
 		}
 	})
