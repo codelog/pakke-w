@@ -7,26 +7,6 @@
 	
 	<title>Pakke | Controla tu paquetería desde un solo lugar</title>
 
-	<meta name="description" content="Controla toda tu paquetería, compara los precios, imprime las guías y rastrea tus paquetes con Pakke Soluciones de Envío." />
-	<meta name="keywords" content="pakke, venders, soluciones de envío, envíos, mensajería, recolección de paquetes, paquetería, ventas, negocio, tienda, ecommerce, codelog">
-	
-	<!-- FACEBOOK -->
-	<meta property="og:url"             content="http://www.pakke.mx" />
-	<meta property="og:type"            content="website" />
-	<meta property="og:title"           content="Pakke" />
-	<meta property="og:description"		content="Controla toda tu paquetería desde una sola plataforma con Pakke Soluciones de Envío." />
-	<meta property="og:image"           content="http://www.pakke.mx/img/pakke-logo-icn.png" />
-
-	<!-- TWIITER -->
-	<meta name="twitter:card" 			content="summary_large_image">
-	<meta name="twitter:site" 			content="@pakke_mx ">
-	<meta name="twitter:creator" 		content="@codelogg">
-	<meta name="twitter:title" 			content="Pakke">
-	<meta name="twitter:description" 	content="Controla toda tu paquetería desde una sola plataforma con Pakke Soluciones de Envío.">
-	<meta name="twitter:image" 			content="http://www.pakke.mx/img/pakke-logo-icn.png">
-
-	<meta itemprop="image" content="http://www.pakke.mx/img/pakke-logo-icn.png" />
-
 	<!-- ICN -->
 	<link rel="apple-touch-icon" href="http://www.pakke.mx/img/favicon-apple.png" />
 	<link rel="shortcut icon" type="image/x-icon" href="http://www.pakke.mx/img/favicon.ico" />
@@ -69,6 +49,27 @@
 		var rl_siteid = "93c96e85-be4f-4687-999a-d6f4076d5041";
 	</script>
 	<script type="text/javascript" src="//cdn.rlets.com/capture_static/mms/mms.js" async="async"></script> -->
+
+
+	<meta name="description" content="Controla toda tu paquetería, compara los precios, imprime las guías y rastrea tus paquetes con Pakke Soluciones de Envío." />
+	<meta name="keywords" content="pakke, venders, soluciones de envío, envíos, mensajería, recolección de paquetes, paquetería, ventas, negocio, tienda, ecommerce, codelog">
+	
+	<!-- FACEBOOK -->
+	<meta property="og:url"             content="http://www.pakke.mx" />
+	<meta property="og:type"            content="website" />
+	<meta property="og:title"           content="Pakke" />
+	<meta property="og:description"		content="Controla toda tu paquetería desde una sola plataforma con Pakke Soluciones de Envío." />
+	<meta property="og:image"           content="http://www.pakke.mx/img/pakke-logo-icn.png" />
+
+	<!-- TWIITER -->
+	<meta name="twitter:card" 			content="summary_large_image">
+	<meta name="twitter:site" 			content="@pakke_mx ">
+	<meta name="twitter:creator" 		content="@codelogg">
+	<meta name="twitter:title" 			content="Pakke">
+	<meta name="twitter:description" 	content="Controla toda tu paquetería desde una sola plataforma con Pakke Soluciones de Envío.">
+	<meta name="twitter:image" 			content="http://www.pakke.mx/img/pakke-logo-icn.png">
+
+	<meta itemprop="image" content="http://www.pakke.mx/img/pakke-logo-icn.png" />
 
 
 </head>
@@ -228,6 +229,201 @@
 				<figcaption>Envía tu paquete sin salir de tu oficina</figcaption>
 			</figure>
 		</div>
+	</div>
+
+
+
+	<!-- COTIZADOR -->
+	<div id="quoting">
+		<div class="wp">
+			<div class="col">
+				<figure>
+					<img src="img/cotizar_bg.png" alt="Pakke cotiza tu envío">
+				</figure>
+			</div>
+			<div class="col">
+				<h2>Cotiza tu envío</h2>
+				<div class="tabs-wp">
+					<ul class="tabs">
+						<li>
+							<input type="radio" name="tabs" id="tab1" checked="checked"/>
+							<label for="tab1">Voy a enviar paquete</label>
+							<div class="tab-content" id="tab-content1">
+								<form id="package" action="#">
+									<div class="row">
+										<p>
+											<input id="" type="number" placeholder="Destino Hacia (código postal ó colonia)" required>
+										</p>
+										<p>
+											<input id="" type="number" placeholder="Origen Desde (código postal ó colonia)" required>
+										</p>
+									</div>
+									<div class="row">
+										<p>
+											<label for="">Nº de paquetes</label>
+											<input name="" id="" type="number" placeholder="1" value="1">
+											<span class="txt">pzas</span>
+										</p>
+										<p>
+											<label for="">Peso</label>
+											<input name="" id="" type="number" placeholder="--">
+											<span class="txt">kg</span>
+										</p>
+										<p>
+											<label for="">Ancho</label>
+											<input name="" id="" type="number" placeholder="--">
+											<span class="txt">cm</span>
+										</p>
+										<p>
+											<label for="">Alto</label>
+											<input name="" id="" type="number" placeholder="--">
+											<span class="txt">cm</span>
+										</p>
+										<p>
+											<label for="">Largo</label>
+											<input name="" id="" type="number" placeholder="--">
+											<span class="txt">cm</span>
+										</p>
+									</div>
+									<div class="row datos">
+										<p>
+											<label for="">Total de peso facturado</label>
+											<input readonly type="text" name="" value="8.00">
+											<span class="txt">kg</span>
+											<!-- <a>information</a>
+											<span class="tooltip">Lorem</span> -->
+										</p>
+										<p>
+											<label for="">Peso físico total</label>
+											<input readonly type="text" name="" value="8.00">
+											<span class="txt">kg</span>
+											<!-- <a>
+												<span class="tooltip">La suma del peso físico de todas las piezas de tu envío.</span>
+											</a> -->
+											
+										</p>
+										<p>
+											<label for="">Peso volumétrico total</label>
+											<input readonly type="text" name="" value="2.80">
+											<span class="txt">kg</span>
+											<!-- <a>information</a>
+											<span class="tooltip">Lorem</span> -->
+										</p>
+									</div>
+									<div class="row btn">
+										<p>
+											<small>* Envíos y cotizaciones solamente dentro del interior de la Republica Mexicana</small>
+											<small>* Consulta la lista de <a href="http://help.pakke.mx/articulos-prohibidos/" target="_blank" title="Consulta la lista artículos prohibidos">artículos prohibidos</a> y de <a href="http://help.pakke.mx/como-empacar/" target="_blank" title="Cómo empacar tu envío">¿Cómo empacar?</a></small>
+										</p>
+										<p>
+											<input type="button" disabled="disabled" value="Cotizar">
+										</p>
+									</div>
+								</form>
+							</div>
+						</li>
+						<li>
+							<input type="radio" name="tabs" id="tab2"/>
+							<label for="tab2">Enviaré documentos</label>
+							<div class="tab-content" id="tab-content2">
+								<form id="docs" action="#">
+									<div class="row">
+										<p>
+											<input id="" type="number" placeholder="Destino Hacia (código postal ó colonia)" required>
+										</p>
+										<p>
+											<input id="" type="number" placeholder="Origen Desde (código postal ó colonia)" required>
+										</p>
+									</div>
+									<div class="row">
+										<p>
+											<label for="">Peso</label>
+											<input name="" id="" type="number" placeholder="0" value="0">
+											<span class="txt">kg</span>
+										</p>
+									</div>
+									<div class="row btn">
+										<p>
+											<small>* Envíos y cotizaciones solamente dentro del interior de la Republica Mexicana</small>
+											<small>* Consulta la lista de <a href="http://help.pakke.mx/articulos-prohibidos/" target="_blank" title="Consulta la lista artículos prohibidos">artículos prohibidos</a> y de <a href="http://help.pakke.mx/como-empacar/" target="_blank" title="Cómo empacar tu envío">¿Cómo empacar?</a></small>
+										</p>
+										<p>
+											<input type="button" disabled="disabled" value="Cotizar">
+										</p>
+									</div>
+								</form>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				
+			</div>
+		</div>
+	</div>
+
+
+	<!-- COTIZADOR VENTANA -->
+	<div id="results">
+		<div class="wp">
+			<h2>Resultados de tu cotizador</h2>
+			<div class="box">
+				<div class="row">
+					<p>Desde: <b>74200 - Col. Atlixco Centro - Atlixco (PU)</b></p>
+					<p>Hacia: <b>90210 - Col. Amantla - Calpulalpan (TL)</b></p>
+					<p><b>8.00 kg</b></p>
+				</div>
+			</div>
+			<div class="box">
+				<div class="row">
+					<div class="col col-30">
+						<p>Servicio</p>
+					</div>
+					<div class="col col-25">
+						<p>Entrega estimada</p>
+					</div>
+					<div class="col col-45">
+						<p>Precio</p>
+					</div>
+				</div>
+				<div class="row score">
+					<div class="col col-30">
+						<figure class="logo">
+							<img src="img/socios/estafeta-logo_poster.png" alt="Estafeta logo mensajería pakke">
+						</figure>
+						<p class="estimated">Entrega en 3 días</p>
+					</div>
+					<div class="col col-25">
+						<p class="date">14/mzo/2018</p>
+						<p class="day">2 días</p>
+					</div>
+					<div class="col col-45">
+						<p class="lowprice"></p>
+						<p class="price"><strong>MX$1,101.11</strong> incl. IVA <span class="offer">Ahorras MX$152.95 (29%)</span></p>
+						<a href="" class="btnRegister">Quiero registrarme para envíar</a>
+					</div>
+				</div>
+				<div class="row score">
+					<div class="col col-30">
+						<figure class="logo">
+							<img src="img/socios/fedex-logo_poster.png" alt="FedEx logo mensajería pakke">
+						</figure>
+						<p class="estimated">Económico (6-10 días)</p>
+					</div>
+					<div class="col col-25">
+						<p class="date">20/mzo/2018</p>
+						<p class="day">8 días</p>
+					</div>
+					<div class="col col-45">
+						<p class="lowprice">MX$ 527.73</p>
+						<p class="price"><strong>MX$374.78</strong> incl. IVA</p>
+						<a href="" class="btnRegister">Quiero registrarme para envíar</a>
+					</div>
+				</div>
+			</div>
+			<a class="close-window" href="#" title="Cerrar ventana">Cerrar</a>
+		</div>
+		<div class="bg"></div>
 	</div>
 
 

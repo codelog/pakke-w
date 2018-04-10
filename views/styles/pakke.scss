@@ -13,6 +13,7 @@ $error:					#D7244C;
 $moradito:				#7F84BF;
 $menu-top:				#E3B2FF;		// morado menu top
 $etomin:				#FF5959;		// etomin
+$azuletomin:			#0047ba;
 $texto:					#888888;
 $textoscuro:			#4D4D4D;		// texto
 $textogris:				#969696;		// texto gris
@@ -20,6 +21,7 @@ $textomorado:			#5E0D8B;		// texto morado
 $bggris:				#f5f5f7;
 $green:					#2faf59;
 
+$f10:					0.625em;
 $f11:					0.688rem;
 $f12:					0.750rem;
 $f13:					0.813rem;
@@ -116,6 +118,7 @@ $path--rel:				"../img";
 form {
 	p {
 		input {
+			outline: none;
 			&.error {
 				border-color: #ef5476 !important;
 				color: #ef5476 !important;
@@ -138,6 +141,14 @@ form {
 			font-size: $f14 !important;
 			font-weight: 600;
 		}
+	}
+	input[type=number]::-webkit-inner-spin-button, 
+	input[type=number]::-webkit-outer-spin-button { 
+		-webkit-appearance: none; 
+		margin: 0; 
+	}
+	input[type='number'] {
+		-moz-appearance:textfield;
 	}
 }
 
@@ -1398,15 +1409,21 @@ footer {
 			}
 		}
 	}
-}
-@media screen and (max-width: 1000px){
-	#menu-scroll {
+	@media screen and (max-width:  1000px){
 		display: none !important;
 		&.activo {
 			display: none !important;
 		}
 	}
 }
+// @media screen and (max-width: 1000px){
+// 	#menu-scroll {
+// 		display: none !important;
+// 		&.activo {
+// 			display: none !important;
+// 		}
+// 	}
+// }
 
 
 
@@ -1603,6 +1620,34 @@ body.videoWp {
 				}
 			}
 		}
+		@media screen and (max-width: 600px) {
+			ul {
+				li {
+					margin: 0 0 1.5em;
+					img {
+						max-height: 70px;
+						margin-bottom: .5em;
+					}
+					figcaption {
+						font-size: 1rem;
+					}
+				}
+			}
+		}
+		@media screen and (max-width: 450px) {
+			p:first-of-type {
+				margin-bottom: 2em;
+			}
+			ul {
+				text-align: center;
+				li{
+					display: inline-block;
+					float: none;
+					width: 48%;
+				}
+			}
+		}
+
 	}
 }
 
@@ -1614,6 +1659,564 @@ body.videoWp {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// COTIZA ::::::::: ::::::::::::: :::::::::::
+#quoting {
+	position: relative;
+	margin: 0;
+	padding: 3.125em 0 3.5em;
+	display: block;
+	background-color: $bggris;
+	.col {
+		display: inline-block;
+		width: 29%;
+		position: relative;
+		vertical-align: top;
+		figure {
+			width: 100%;
+			img {
+				display: block;
+				max-width: 90%;
+			}
+		}
+		&:last-child {
+			width: 70%;
+		}
+		h2 {
+			color: $textoscuro;
+			font-size: $f24;
+			font-weight: 600;
+			margin-bottom: 1em;
+		}
+		.tabs-wp {
+			position: relative;
+			width: 100%;
+			display: block;
+			// FUNCION TABS ///////////////////
+			.tabs {
+				width: 100%;
+				list-style: none;
+				position: relative;
+				display: block;
+				li {
+					float: left;
+					display: block;
+					width: 100%;
+					input[type="radio"] {
+						position: absolute;
+						top: 1em;
+						left: 3em;
+						@include opacity(0);
+						&:last-child {
+							left: 33%;
+						}
+					}
+					> label {
+						display: block;
+						cursor: pointer;
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 50%;
+						max-width: 245px;
+						font-size: $f16;
+						font-weight: 400;
+						color: $textogris;
+						padding: .7em 0 .7em 3em;
+						
+						background-image: url('../img/cotizar_paquete2.png');
+						background-repeat: no-repeat;
+						background-position: .66em center;
+						background-color: rgba(255,255,255,0.44);
+						background-size: 25px;
+						&:hover {
+							
+						}
+					}
+					&:last-child {
+						> label {
+							left: 246px;
+							background-image: url('../img/cotizar_doc2.png');
+							background-repeat: no-repeat;
+							background-size: 21px;
+							background-position: .66em center;
+							background-color: rgba(255,255,255,0.44);
+						}
+					}
+				}
+				.tab-content{
+					z-index: 2;
+					display: none;
+					width: 100%;
+					padding: 2.188em 1.875em;  
+					position: relative;
+					margin-top: 2.83em;
+					background: $white;
+					@include box-shadow-out(0, 2px, 4px, rgba(0,0,0,0.1))
+				}
+				[id^="tab"]:checked + label { 
+					color: $etomin;
+					font-weight: 700;
+					background-image: url('../img/cotizar_paquete.png');
+					background-repeat: no-repeat;
+					background-size: 25px;
+					background-position: .66em center;
+					background-color: $white;
+				}
+				[id="tab2"]:checked + label { 
+					background-image: url('../img/cotizar_doc.png');
+					background-size: 21px;
+				}
+				[id^="tab"]:checked ~ [id^="tab-content"] {
+					display: block;
+				}
+			}
+			form {
+				.row {
+					display: block;
+					width: 100%;
+					overflow: hidden;
+					margin-bottom: 2.500em;
+					&:last-child {
+						margin-bottom: 0;
+					}
+					p {
+						display: inline-block;
+						float: left;
+						overflow: hidden;
+						position: relative;
+						label, .txt {
+							color: $textogris;
+							font-size: $f16;
+							font-weight: 400;
+							display: block;
+						}
+						input {
+							float: left;
+							width: 90%;
+							font-size: $f16;
+							font-weight: 700;
+							color: $textoscuro;
+							padding: 0 .4em;
+							margin-right: .25em;
+							outline: none;
+							border: none;
+							border-bottom: solid thin $textogris;
+							&::-webkit-input-placeholder { 
+								color: $textogris !important;
+								font-weight: 400;
+							}
+							&:-moz-placeholder {
+								color: $textogris !important;
+								font-weight: 400;
+							}
+							&::-moz-placeholder {
+								color: $textogris !important;
+								font-weight: 400;
+							}
+							&:-ms-input-placeholder {
+								color: $textogris !important;
+								font-weight: 400;
+							}
+						}
+						.txt {
+							float: left;
+						}
+						
+					}
+				}
+				small {
+					display: block;
+					font-size: $f12;
+					color: $textogris;
+				}
+				&#package {
+					.row:nth-child(1) {
+						p {
+							width: 50%;
+							padding: 0 0 0 1em;
+							@include bg ($white, 'mexico.png', left center, 12px 16px)
+						}
+					}
+					.row:nth-child(2) {
+						p {
+							width: 20%;
+							input {
+								width: 50%;
+								letter-spacing: 2px;
+							}
+						}
+					}
+					.row.datos {
+						p {
+							width: 33.3%;
+							input {
+								width: 65px;
+								border: none;
+								text-align: right;
+							}
+							.txt {
+								color: $textoscuro;
+								font-weight: 700;
+							}
+							a {
+								float: left;
+								// text-indent: -9999999px;
+								display: block;
+								color: $white;
+								width: 12px;
+								height: 12px;
+								margin: .35em 0 0 .5em;
+								@include bg ($white, 'information.png', center center, cover);
+								@include border-radius(50%);
+								&:hover {
+									@include opacity(0.3);
+								}
+							}
+						}
+					}
+					.row.btn {
+						p {
+							width: 70%;
+							small {
+								margin-bottom: .6em;
+								&:last-child {
+									margin-bottom: 0;
+								}
+								a {
+									text-decoration: underline;
+									color: rgba(0, 71, 186, 0.66);
+									&:hover {
+										@include opacity(0.25);
+									}
+								}
+							}
+							&:last-child {
+								width: 30%;
+								input {
+									width: 100%;
+									max-width: 220px;
+									text-align: center;
+									font-size: $f18;
+									font-weight: 700;
+									margin: 0;
+									height: 47px;
+									float: right;
+									background-color: $green;
+									padding: 0 0 2px 0;
+									border: none;
+									color: $white;
+									cursor: pointer;
+									@include border-radius(20px);
+									@include transition(0.3s)
+									&:disabled {
+										@include opacity(0.3);
+										cursor: default;
+									}
+									&:hover {
+										@include opacity(0.3);
+									}
+								}
+							}
+						}
+					}
+				}
+				&#docs {
+					.row:nth-child(1) {
+						p {
+							width: 50%;
+							padding: 0 0 0 1em;
+							@include bg ($white, 'mexico.png', left center, 12px 16px)
+						}
+					}
+					.row:nth-child(2) {
+						p {
+							width: 20%;
+							input {
+								width: 50%;
+								letter-spacing: 2px;
+							}
+						}
+					}
+					.row.btn {
+						p {
+							width: 70%;
+							small {
+								margin-bottom: .6em;
+								&:last-child {
+									margin-bottom: 0;
+								}
+								a {
+									text-decoration: underline;
+									color: rgba(0, 71, 186, 0.66);
+									&:hover {
+										@include opacity(0.25);
+									}
+								}
+							}
+							&:last-child {
+								width: 30%;
+								input {
+									width: 100%;
+									max-width: 220px;
+									text-align: center;
+									font-size: $f18;
+									font-weight: 700;
+									margin: 0;
+									height: 47px;
+									float: right;
+									background-color: $green;
+									padding: 0 0 2px 0;
+									border: none;
+									color: $white;
+									cursor: pointer;
+									@include border-radius(20px);
+									@include transition(0.3s)
+									&:disabled {
+										@include opacity(0.3);
+										cursor: default;
+									}
+									&:hover {
+										@include opacity(0.3);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// RESULTADOS ::::::::: ::::::::::::: :::::::::::
+#results {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 99987654321;
+	top: 0;
+	left: 0;
+	.wp {
+		position: absolute;
+		width: 100%;
+		max-width: 1000px;
+		top: 10vh;
+		left: 50%;
+		margin-left: -500px;
+		z-index: 5;
+		h2 {
+			color: $white;
+			margin-bottom: .6em;
+		}
+		.box {
+			width: 100%;
+			display: block;
+			position: relative;
+			background-color: $white;
+			margin-bottom: 0.625em;
+			padding: 1.250em 2.500em 1.250em;
+			.col {
+				width: 100%;
+			}
+			.col-25 {
+				width: 25%;
+			}
+			.col-30 {
+				width: 30%;
+			}
+			.col-35 {
+				width: 35%;
+			}
+			.col-40 {
+				width: 40%;
+			}
+			.col-45 {
+				width: 45%;
+			}
+			&:first-of-type {
+				.row:nth-child(1) {
+					overflow: hidden;
+					p {
+						float: left;
+						width: 41%;
+						margin-right: 4%;
+						font-size: $f15;
+						font-weight: 400;
+						color: $textoscuro;
+						padding: 0 0 0 1.3em;
+						@include bg ($white, 'mexico.png', left center, 12px 16px)
+						&:last-child {
+							width: 10%;
+							margin-right: 0;
+							padding: 0;
+							background: none;
+						}
+					}
+				}
+			}
+			&:nth-of-type(2) {
+				margin: 0;
+				padding-bottom: 2em;
+				.row {
+					overflow: hidden;
+					display: block;
+					width: 100%;
+					margin-bottom: 1.25em;
+
+					.col {
+						display: inline-block;
+						float: left;
+					}
+					p {
+						width: 100%;
+					}
+					&:first-child {
+						border-bottom: solid thin lighten($textogris, 25);
+						font-size: $f14;
+						color: $textogris;
+						padding-bottom: .75em;
+					}
+					&:last-child {
+						padding-bottom: 0;
+						margin-bottom: 0;
+					}
+					&.score {
+						margin-bottom: 1.5em;
+						padding-bottom: 1em;
+						border-bottom: solid thin lighten($textogris, 25);
+						&:last-child {
+							border: none;
+							padding-bottom: 0;
+							margin-bottom: 0;
+						}
+						.logo {
+							display: block;
+							width: 100%;
+							margin-bottom: .25em;
+							img {
+								max-height: 22px;
+								max-width: 100px;
+								display: block;
+							}
+						}
+						.estimated {
+							display: block;
+							font-size: $f16;
+							font-weight: 600;
+							color: $textogris;
+						}
+						.date {
+							color: $etomin;
+							font-size: $f16;
+							font-weight: 700;
+							padding: 0 0 0 1.5em;
+							@include bg ($trans, 'calendar.png', left bottom, 15px 16px);
+						}
+						.day {
+							@extend .estimated;
+							padding-left: 1.7em;
+						}
+						.lowprice {
+							font-size: $f13;
+							text-decoration: line-through;
+							color: $textogris;
+						}
+						.price {
+							font-size: $f13;
+							font-weight: 400;
+							margin-bottom: .5em;
+							color: darken($textoscuro, 14);
+							strong {
+								font-size: $f18;
+								font-weight: 700;
+							}
+							.offer {
+								color: $etomin;
+								font-size: $f13;
+								font-weight: 600;
+							}
+						}
+						.btnRegister {
+							color: $white;
+							font-size: $f17;
+							font-weight: 700;
+							display: inline-block;
+							background-color: $green;
+							padding: .5em 1.5em .6em;
+							text-align: center;
+							@include border-radius(20px);
+							&:hover {
+								background-color: lighten($green, 35);
+							}
+						}
+					}
+				}
+			}
+		}
+		.close-window {
+			position: absolute;
+			top: -7px;
+			right: 0;
+			z-index: 5;
+			display: block;
+			width: 47px;
+			height: 47px;
+			text-indent: -999999px;
+			@include bg ($trans, 'pakke-cerrar-video.svg', center, 45px);
+			&:hover {
+				@include rotate(90deg);
+			}
+		}
+	}
+	.bg {
+		position: absolute;
+		background-color: rgba(0,0,0,0.77);
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		top: 0;
+		left: 0;
+	}
+}
 
 
 
