@@ -1691,6 +1691,15 @@ body.videoWp {
 		width: 29%;
 		position: relative;
 		vertical-align: top;
+		@media screen and (max-width: 1025px) {
+			width: 24%;
+			vertical-align: middle;
+		}
+		@media screen and (max-width: 1000px) {
+			&:first-of-type {
+				display: none;
+			}
+		}
 		figure {
 			width: 100%;
 			img {
@@ -1700,12 +1709,21 @@ body.videoWp {
 		}
 		&:last-child {
 			width: 70%;
+			@media screen and (max-width: 1025px) {
+				width: 75%;
+			}
+			@media screen and (max-width: 1000px) {
+				width: 100%;
+			}
 		}
 		h2 {
 			color: $textoscuro;
 			font-size: $f24;
 			font-weight: 600;
 			margin-bottom: 1em;
+			@media screen and (max-width: 700px) {
+				text-align: center;
+			}
 		}
 		.tabs-wp {
 			position: relative;
@@ -1748,8 +1766,15 @@ body.videoWp {
 						background-position: .66em center;
 						background-color: rgba(255,255,255,0.44);
 						background-size: 25px;
-						&:hover {
-							
+						@media screen and (max-width: 700px) {
+							width: 50%;
+							max-width: 800px;
+						}
+						@media screen and (max-width: 450px) {
+							text-transform: capitalize;
+							span {
+								display: none;
+							}
 						}
 					}
 					&:last-child {
@@ -1760,6 +1785,9 @@ body.videoWp {
 							background-size: 21px;
 							background-position: .66em center;
 							background-color: rgba(255,255,255,0.44);
+							@media screen and (max-width: 700px) {
+								left: 50%;
+							}
 						}
 					}
 				}
@@ -1767,11 +1795,14 @@ body.videoWp {
 					z-index: 2;
 					display: none;
 					width: 100%;
-					padding: 2.188em 1.875em;  
+					padding: 2.188em 1.875em;
 					position: relative;
 					margin-top: 2.83em;
 					background: $white;
 					@include box-shadow-out(0, 2px, 4px, rgba(0,0,0,0.1))
+					@media screen and (max-width: 376px) {
+						padding: 2.188em 1em;
+					}
 				}
 				[id^="tab"]:checked + label { 
 					color: $etomin;
@@ -1796,6 +1827,9 @@ body.videoWp {
 					width: 100%;
 					overflow: hidden;
 					margin-bottom: 2.500em;
+					@media screen and (max-width: 700px) {
+						margin-bottom: 1em;
+					}
 					&:last-child {
 						margin-bottom: 0;
 					}
@@ -1810,6 +1844,14 @@ body.videoWp {
 							font-weight: 400;
 							display: block;
 						}
+						@media screen and (max-width: 700px) {
+							label, .txt {
+								font-size: $f15;
+							}
+							label {
+								margin-bottom: .3em;
+							}
+						}
 						input {
 							float: left;
 							width: 90%;
@@ -1821,6 +1863,15 @@ body.videoWp {
 							outline: none;
 							border: none;
 							border-bottom: solid thin $textogris;
+							@media screen and (max-width: 1025px) {
+								width: 95%;
+							}
+							@media screen and (max-width: 700px) {
+								-webkit-appearance: none;
+								-moz-appearance: textfield;
+								-moz-appearance: none;
+								@include border-radius(0);
+							}
 							&::-webkit-input-placeholder { 
 								color: $textogris !important;
 								font-weight: 400;
@@ -1841,7 +1892,6 @@ body.videoWp {
 						.txt {
 							float: left;
 						}
-						
 					}
 				}
 				small {
@@ -1854,7 +1904,31 @@ body.videoWp {
 						p {
 							width: 50%;
 							padding: 0 0 0 1em;
-							@include bg ($white, 'mexico.png', left center, 12px 16px)
+							@include bg ($white, 'mexico.png', left center, 12px 16px);
+						}
+						@media screen and (max-width: 700px) {
+							margin-bottom: 0;
+							p {
+								width: 100%;
+								margin-bottom: 2em;
+								input {
+									width: 100%;
+								}
+							}
+						}
+						@media screen and (max-width: 376px) {
+							p {
+								input {
+									font-size: $f15;
+								}
+							}
+						}
+						@media screen and (max-width: 320px) {
+							p {
+								input {
+									font-size: $f14;
+								}
+							}
 						}
 					}
 					.row:nth-child(2) {
@@ -1863,6 +1937,12 @@ body.videoWp {
 							input {
 								width: 50%;
 								letter-spacing: 2px;
+							}
+						}
+						@media screen and (max-width: 700px) {
+							p {
+								width: 50%;
+								margin-bottom: 1em;
 							}
 						}
 					}
@@ -1880,7 +1960,6 @@ body.videoWp {
 							}
 							a {
 								float: left;
-								// text-indent: -9999999px;
 								display: block;
 								color: $white;
 								width: 12px;
@@ -1893,48 +1972,109 @@ body.videoWp {
 								}
 							}
 						}
-					}
-					.row.btn {
-						p {
-							width: 70%;
-							small {
-								margin-bottom: .6em;
-								&:last-child {
-									margin-bottom: 0;
+						@media screen and (max-width: 700px) {
+							margin-bottom: 1.5em;
+							p {
+								label {
+									font-size: $f12;
+									
 								}
-								a {
-									text-decoration: underline;
-									color: rgba(0, 71, 186, 0.66);
-									&:hover {
-										@include opacity(0.25);
+								input {
+									text-align: left;
+								}
+								&:nth-of-type(2) {
+									label {
+										width: 80%;
 									}
 								}
 							}
+						}
+						@media screen and (max-width: 450px) {
+							p {
+								&:nth-of-type(2) {
+									label {
+										width: 70%;
+									}
+								}
+							}
+						}
+					}
+					.row.btn {
+						p {
+							width: 30%;
+							input {
+								width: 100%;
+								max-width: 220px;
+								text-align: center;
+								font-size: $f18;
+								font-weight: 700;
+								margin: 0;
+								height: 47px;
+								//float: right;
+								background-color: $green;
+								padding: 0 0 2px 0;
+								border: none;
+								color: $white;
+								cursor: pointer;
+								@include border-radius(20px);
+								@include transition(0.3s)
+								&:disabled {
+									@include opacity(0.3);
+									cursor: default;
+								}
+								&:hover {
+									@include opacity(0.3);
+								}
+							}
+							&:first-child {
+								float: right;
+							}
 							&:last-child {
-								width: 30%;
+								float: left;
+								width: 70%;
+								small {
+									margin-bottom: .6em;
+									&:last-child {
+										margin-bottom: 0;
+									}
+									a {
+										text-decoration: underline;
+										color: rgba(0, 71, 186, 0.66);
+										&:hover {
+											@include opacity(0.25);
+										}
+									}
+								}
+							}
+						}
+						@media screen and (max-width: 700px) {
+							p {
+								width: 100%;
+								float: left;
+								text-align: center;
 								input {
+									display: inline-block;
+									float: none;
+								}
+								&:first-child {
+									margin: .5em auto 2em;
+								}
+								&:last-child {
 									width: 100%;
-									max-width: 220px;
-									text-align: center;
-									font-size: $f18;
-									font-weight: 700;
-									margin: 0;
-									height: 47px;
-									float: right;
-									background-color: $green;
-									padding: 0 0 2px 0;
-									border: none;
-									color: $white;
-									cursor: pointer;
-									@include border-radius(20px);
-									@include transition(0.3s)
-									&:disabled {
-										@include opacity(0.3);
-										cursor: default;
-									}
-									&:hover {
-										@include opacity(0.3);
-									}
+									
+								}
+							}
+						}
+						@media screen and (max-width: 450px) {
+							p {
+								small {
+									line-height: 1.9em;
+								}
+								input {
+									max-width: 100%;
+									height: 55px;
+									padding: 0 0 1px 0;
+									font-size: $f22;
 								}
 							}
 						}
@@ -1947,6 +2087,30 @@ body.videoWp {
 							padding: 0 0 0 1em;
 							@include bg ($white, 'mexico.png', left center, 12px 16px)
 						}
+						@media screen and (max-width: 700px) {
+							margin-bottom: 0;
+							p {
+								width: 100%;
+								margin-bottom: 2em;
+								input {
+									width: 100%
+								}
+							}
+						}
+						@media screen and (max-width: 376px) {
+							p {
+								input {
+									font-size: $f15;
+								}
+							}
+						}
+						@media screen and (max-width: 320px) {
+							p {
+								input {
+									font-size: $f14;
+								}
+							}
+						}
 					}
 					.row:nth-child(2) {
 						p {
@@ -1956,48 +2120,88 @@ body.videoWp {
 								letter-spacing: 2px;
 							}
 						}
+						@media screen and (max-width: 700px) {
+							p {
+								width: 30%;
+							}
+						}
 					}
 					.row.btn {
 						p {
-							width: 70%;
-							small {
-								margin-bottom: .6em;
-								&:last-child {
-									margin-bottom: 0;
+							width: 30%;
+							input {
+								width: 100%;
+								max-width: 220px;
+								text-align: center;
+								font-size: $f18;
+								font-weight: 700;
+								margin: 0;
+								height: 47px;
+								//float: right;
+								background-color: $green;
+								padding: 0 0 2px 0;
+								border: none;
+								color: $white;
+								cursor: pointer;
+								@include border-radius(20px);
+								@include transition(0.3s)
+								&:disabled {
+									@include opacity(0.3);
+									cursor: default;
 								}
-								a {
-									text-decoration: underline;
-									color: rgba(0, 71, 186, 0.66);
-									&:hover {
-										@include opacity(0.25);
+								&:hover {
+									@include opacity(0.3);
+								}
+							}
+							&:first-child {
+								float: right;
+							}
+							&:last-child {
+								float: left;
+								width: 70%;
+								small {
+									margin-bottom: .6em;
+									&:last-child {
+										margin-bottom: 0;
+									}
+									a {
+										text-decoration: underline;
+										color: rgba(0, 71, 186, 0.66);
+										&:hover {
+											@include opacity(0.25);
+										}
 									}
 								}
 							}
-							&:last-child {
-								width: 30%;
+						}
+						@media screen and (max-width: 700px) {
+							p {
+								width: 100%;
+								float: left;
+								text-align: center;
 								input {
+									display: inline-block;
+									float: none;
+								}
+								&:first-child {
+									margin: .5em auto 2em;
+								}
+								&:last-child {
 									width: 100%;
-									max-width: 220px;
-									text-align: center;
-									font-size: $f18;
-									font-weight: 700;
-									margin: 0;
-									height: 47px;
-									float: right;
-									background-color: $green;
-									padding: 0 0 2px 0;
-									border: none;
-									color: $white;
-									cursor: pointer;
-									@include border-radius(20px);
-									@include transition(0.3s)
-									&:disabled {
-										@include opacity(0.3);
-										cursor: default;
-									}
-									&:hover {
-										@include opacity(0.3);
-									}
+									
+								}
+							}
+						}
+						@media screen and (max-width: 450px) {
+							p {
+								small {
+									line-height: 1.9em;
+								}
+								input {
+									max-width: 100%;
+									height: 55px;
+									padding: 0 0 1px 0;
+									font-size: $f22;
 								}
 							}
 						}
@@ -2025,7 +2229,10 @@ body.videoWp {
 
 
 
-
+.label-table {
+	font-size: $f14;
+	color: $textogris;	
+}
 // RESULTADOS ::::::::: ::::::::::::: :::::::::::
 #results {
 	display: none;
@@ -2035,6 +2242,9 @@ body.videoWp {
 	z-index: 99987654321;
 	top: 0;
 	left: 0;
+	@media screen and (max-width: 601px) {
+		position: absolute;
+	}
 	.wp {
 		position: absolute;
 		width: 100%;
@@ -2043,9 +2253,27 @@ body.videoWp {
 		left: 50%;
 		margin-left: -500px;
 		z-index: 5;
+		@media screen and (max-width: 1025px) {
+			top: 5vh;
+		}
+		@media screen and (max-width: 1000px) {
+			width: 95%;
+			left: 2.5%;
+			margin-left: 0;
+		}
+		@media screen and (max-width: 801px) {
+			width: 96%;
+			left: 2%;
+		}
+		@media screen and (max-width: 601px) {
+			top: 4vh;
+		}
 		h2 {
 			color: $white;
-			margin-bottom: .6em;
+			margin-bottom: .4em;
+			@media screen and (max-width: 601px) {
+				font-size: $f20;
+			}
 		}
 		.box {
 			width: 100%;
@@ -2090,6 +2318,17 @@ body.videoWp {
 							padding: 0;
 							background: none;
 						}
+						@media screen and (max-width: 601px) {
+							width: 100%;
+							margin-bottom: 1em;
+							text-align: center;
+							background-position: top center;
+							padding: 1em 0 0 0;
+							&:last-child {
+								width: 100%;
+								margin-bottom: 0;
+							}
+						}
 					}
 				}
 			}
@@ -2111,9 +2350,10 @@ body.videoWp {
 					}
 					&:first-child {
 						border-bottom: solid thin lighten($textogris, 25);
-						font-size: $f14;
-						color: $textogris;
 						padding-bottom: .75em;
+						@media screen and (max-width: 601px) {
+							display: none;
+						}
 					}
 					&:last-child {
 						padding-bottom: 0;
@@ -2123,10 +2363,23 @@ body.videoWp {
 						margin-bottom: 1.5em;
 						padding-bottom: 1em;
 						border-bottom: solid thin lighten($textogris, 25);
+						@media screen and (max-width: 601px) {
+							.col {
+								margin-bottom: 1.5em;
+							}
+						}
+
 						&:last-child {
 							border: none;
 							padding-bottom: 0;
 							margin-bottom: 0;
+						}
+						.label-table {
+							display: none;
+							@media screen and (max-width: 601px) {
+								display: block;
+								margin-bottom: .5em;
+							}
 						}
 						.logo {
 							display: block;
@@ -2136,7 +2389,14 @@ body.videoWp {
 								max-height: 22px;
 								max-width: 100px;
 								display: block;
+								@media screen and (max-width: 601px) {
+									text-align: center;
+									margin: 0 auto 0;
+									max-height: 30px;
+									max-width: 130px;
+								}
 							}
+							
 						}
 						.estimated {
 							display: block;
@@ -2150,10 +2410,17 @@ body.videoWp {
 							font-weight: 700;
 							padding: 0 0 0 1.5em;
 							@include bg ($trans, 'calendar.png', left bottom, 15px 16px);
+							@media screen and (max-width: 601px) {
+								background-position: top center;
+								padding: .8em 0 0 0;
+							}
 						}
 						.day {
 							@extend .estimated;
 							padding-left: 1.7em;
+							@media screen and (max-width: 601px) {
+								padding-left: 0;
+							}
 						}
 						.lowprice {
 							font-size: $f13;
@@ -2168,6 +2435,11 @@ body.videoWp {
 							strong {
 								font-size: $f18;
 								font-weight: 700;
+								@media screen and (max-width: 601px) {
+									display: block;
+									width: 100%;
+									font-size: $f22;
+								}
 							}
 							.offer {
 								color: $etomin;
@@ -2191,6 +2463,15 @@ body.videoWp {
 					}
 				}
 			}
+			@media screen and (max-width: 801px) {
+				padding: 1em 1em 1em;
+			}
+			@media screen and (max-width: 601px) {
+				.col {
+					width: 100%;
+					text-align: center;
+				}
+			}
 		}
 		.close-window {
 			position: absolute;
@@ -2205,6 +2486,11 @@ body.videoWp {
 			&:hover {
 				@include rotate(90deg);
 			}
+			@media screen and (max-width: 601px) {
+				width: 35px;
+				height: 35px;
+				background-size: 95%;
+			}
 		}
 	}
 	.bg {
@@ -2215,6 +2501,9 @@ body.videoWp {
 		z-index: 1;
 		top: 0;
 		left: 0;
+		@media screen and (max-width: 601px) {
+			position: fixed;
+		}
 	}
 }
 
